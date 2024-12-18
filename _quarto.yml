@@ -1,0 +1,81 @@
+project:
+  type: website
+  output-dir: docs
+
+language: 
+      search-text-placeholder: Search
+
+website:
+  title: AskFinance
+  favicon: images/bee.png
+  page-navigation: true
+  search: 
+    type: textbox
+    location: navbar
+  navbar:
+    pinned: true
+    logo: images/IBMlogo.png
+    right: 
+      - icon: github
+        href: https://github.ibm.com/ibm-client-engineering/solution-AskFinance
+      - icon: linkedin
+        menu:
+          - text: Share on your LinkedIn
+            href:  https://www.linkedin.com/company/ibm/
+          - text:  IBM LinkedIn
+            href:  https://www.linkedin.com/company/ibm/
+  sidebar:
+    - title: "Contents"
+      style: docked
+      collapse-level: 1
+      search: false
+      contents:
+        - href: index.qmd
+          text: Problem Definition
+        - section: Solution Overview
+          contents:
+          - text: Prepare
+            href: SO-01-prepare.qmd
+          - text: Environment 
+            href: SO-02-environment.qmd
+          - text: Troubleshooting
+            href: SO-03-troubleshooting.qmd
+        - section: Implementation Methodology
+          contents:
+          - text: 01-Understand Oracle Cloud API
+            href: IM-01-Understand Oracle Cloud API.qmd
+          - text: 02-Develop Custom Extension OpenAPI Spec
+            href: IM-02-Develop Custom Extension OpenAPI Spec.qmd
+          - text: 03-Develop AI Assistant Actions
+            href: IM-03-Develop AI Assistant Actions.qmd
+          - text: 04-Data Preprocessing
+            href: IM-04-Data Preprocessing.qmd
+          - text: 05-Watson Discovery Setup
+            href: IM-05-Watson Discovery Setup.qmd
+          - text: 06-Watsonx Assistant Setup
+            href: IM-06-Watsonx Assistant Setup.qmd
+          - text: 07-Watsonxai Setup
+            href: IM-07-Watsonxai Setup.qmd
+          - text: 08-Hosted Static Site
+            href: IM-08-Hosted Static Site.qmd
+        - text: Key Takeaways
+          href: key-takeaway.qmd
+
+
+  page-footer: 
+    background: black
+    left: 
+        <div class="listitem CEText"><a autoid="IBM Client Engineering" href="https://www.ibm.com/client-engineering?mhsrc=ibmsearch_a&mhq=client%20engineering" role="listitem" size=""><!--?lit$182463756$-->IBM Client Engineering</a></div>    
+        <div class="listitem CEText"><a autoid="IBM Client Engineering" href="https://ibm-client-engineering.github.io/ce-solutions-hub/" role="listitem" size=""><!--?lit$182463756$-->IBM Solutions Hub</a></div>    
+        
+    center: 
+        <div class ="listitem"><a href="https://ibm.com" rel="noopener noreferrer" class="footerLogo"><img src="https://www.ibm.com/brand/experience-guides/developer/8f4e3cc2b5d52354a6d43c8edba1e3c9/02_8-bar-reverse.svg" alt="IBM Logo" class="footer__logo themedComponent_node_modules-@docusaurus-theme-common-lib-components-ThemedComponent-styles-module themedComponent--light_node_modules-@docusaurus-theme-common-lib-components-ThemedComponent-styles-module" width="250" height="250"></a></div>
+    
+format:
+  html:
+    theme: custom.scss
+    toc: true
+    toc-location: right
+
+
+

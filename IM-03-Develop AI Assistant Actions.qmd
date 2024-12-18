@@ -1,0 +1,42 @@
+---
+sidebar_position: 2
+title: Develop AI Assistant Actions
+custom_edit_url: null
+---
+
+## Create custom extension in watsonx Assistant
+
+- In watsonx Assistant interface, navigate to "Integrations" page.
+- Scroll down and click "Build custom extensions"
+    ![](assets/screenshots/Build_custom_extension.png)
+- Click "Next", enter an Extension Name (e.g. Oracle OpenAPI), click "Next".
+- Upload the json file that you've created, click "Next", click "Finish".
+    ![](assets/screenshots/Build_custom_extension_import_OpenAPI.png)
+- Click "Add +" on the extension card, click "Next", you'll see an Authentication form.
+- Select "Basic Auth" and enter username and password credentials to access your server.
+![](assets/screenshots/Build_custom_extension_authentication.png)
+- click "Next, click "Finish".
+## Integrate custom extension extension in Actions
+
+Once the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths.
+You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.
+
+### Account Balance Inquiry
+For example, the following screenshot shows the Account Balance Inquiry action. 
+Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it's a proper path and all required parameters are included.
+![](assets/screenshots/AccountBalanceInquiry.png)
+Once you've configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example.
+![](assets/screenshots/AccountBalanceInquiry_response.png)
+
+### Journal Batch Status Check
+For example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter "orderBy" and set that to "CreationDate:desc" to ensure correct data output.
+![](assets/screenshots/JournalBatchStatusCheck.png)
+
+### Account Period Status
+For example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they'd lilke to check status for. Therefore, the **ApplicationId** and **LedgerId** variables are passed to the API endpoint through the q parameter set to `ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24'`
+![](assets/screenshots/AccountPeriodStatus.png)
+
+### Ledger Information Retrieval
+For example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they'd lilke to check status for. Therefore, the **LedgerName** session variable is passed to the API endpoint through the q parameter set to `Name='${LedgerName}'`
+![](assets/screenshots/LedgerInformationRetrieval.png)
+

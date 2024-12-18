@@ -1,0 +1,94 @@
+---
+sidebar_position: 1
+title: Develop Custom Extension OpenAPI Spec
+custom_edit_url: null
+---
+
+We've identified the following use cases based on the collaboration with IBM Consulting and the platform that they are building. We propose implementing a conversational AI solution using watsonx orchestrate that integrates with Oracle ERP on the following high-value journeys:
+
+- Account Balance Inquiry
+- Journal Batch Status Check
+- Accounting Period Status
+- Ledger Information Retrieval
+
+For each journey, we identified the API Endpoint that we need and also developed user interaction flow. Below are examples of how we develop a custom extension OpenAPI spec so that users could interact with the endpoints through watsonx Assistant actions.
+
+### Account Balance Inquiry Journey
+
+- API Endpoint: GET `/fscmRestApi/resources/11.13.18.05/ledgerBalances`
+- Develop an action model to recognize account, currency, and ledger queries
+- Create OpenAPI wrapper to handle the observable parameters given in the IBMC endpoints: accountGroupName, accountName, accountingPeriod, currency, ledgerName
+- Design a conversational flow to collect missing parameters if not provided in initial query
+
+
+::: {.callout-note}
+Example interaction:
+
+- **User**: "What's the current balance for our Hardware account?"
+- **Bot**: "Certainly! Which currency and ledger would you like to check?"
+- **User**: "USD in the UK Primary Ledger."
+- **Bot**: [Calls API with parameters] "The current balance for the Hardware account is $X,XXX,XXX.XX as of [CurrentAccountingPeriod]."
+:::
+**For OpenAPI spec example**, please see sections starting line 15 from [this example file](../../assets/openapi_example.json) where the **/ledgerBalances** route was developed
+
+![](assets/screenshots/openapi_ledgerBalances.png)
+
+### Journal Batch Status Check Journey
+- API Endpoint: GET `/fscmRestApi/resources/11.13.18.05/journalBatches`
+- Develop an action model to recognize journal batch queries
+- Create API wrapper to retrieve all journal batches
+- Implement logic to filter and sort batches based on recency or other criteria
+- Design conversation flow to offer details on specific batches
+
+::: {.callout-note}
+
+Example interaction: 
+
+- **User**: "Show me the latest journal batches."
+- **Bot**: [Calls API and processes response] 
+    - "Here are the latest journal batches:
+    - Batch ID: 12345, Description: 'Monthly Accruals', Status: Posted
+    - Batch ID: 12346, Description: 'Expense Reimbursements', Status: Unposted. [...] 
+    - Would you like more details on any specific batch?"
+:::
+**For OpenAPI spec example**, please see sections starting line 703 from [this example file](../../assets/openapi_example.json) where the **/journalBatches** route was developed
+![](assets/screenshots/openapi_journalBatches.png)
+
+### Accounting Period Status
+- API Endpoint: GET `/fscmRestApi/resources/latest/accountingPeriodStatusLOV`
+- Develop an action model to recognize period and ledger queries (wxo)
+- Create OAPI wrapper to handle parameters: ApplicationId, LedgerId, PeriodNameId
+- Implement logic to translate user-friendly period names (i.e "June 2024") to system IDs
+- Design conversation flow to collect ledger information if not provided
+
+::: {.callout-note}
+
+Example interaction:
+- **User**: "What's the status of the June 2024 accounting period?"
+- **Bot**: "Which ledger would you like me to check?"
+- **User**: "The AU Council Primary Ledger."
+- **Bot**: [Calls API with parameters] "The status of the June 2024 (06-24) period for the AU Council Primary Ledger is: Open."
+:::
+**For OpenAPI spec example**, please see sections starting line 1763 from [this example file](../../assets/openapi_example.json) where the **/journalBatches** route was developed
+![](assets/screenshots/openapi_AccountingPeriodStatus.png)
+
+### Ledger Information Retrieval
+
+- API Endpoint: GET `/fscmRestApi/resources/latest/ledgersLOV`
+- Develop an actions and/or skills based model to recognize ledger information queries
+- Create API wrapper to retrieve all ledgers or filter by name
+- Implement logic to present ledger information in a concise, user-friendly format
+- Design a conversation flow to offer additional details on specific ledgers
+
+::: {.callout-note}
+
+Example interaction:
+- User: "What ledgers do we have in our system?"
+- Bot: [Calls API and processes response] 
+    - "Here are the primary ledgers in our system:
+        - UK Primary Ledger
+        - US Primary Ledger
+        - Australian Primary Ledger
+    - Would you like more details about any of these ledgers?"
+:::
+**For OpenAPI spec example**, please see sections starting line 1256 from [this example file](../../assets/openapi_example.json) where the **/journalBatches** route was developed

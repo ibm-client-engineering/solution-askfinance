@@ -1,0 +1,64 @@
+---
+sidebar_position: 0
+title: Understand Oracle Cloud API
+custom_edit_url: null
+---
+Oracle APIs offer powerful tools for developers to integrate, extend, and automate Oracle's suite of applications and services. For this solution, we leverage the REST API for Oracle Fusion Cloud Financials, enabling seamless access to essential financial data. You can find the documentation here: [link](https://docs.oracle.com/en/cloud/saas/financials/24b/farfa/rest-endpoints.html).
+
+- Below is an example of the Ledger Balances REST API documetation page. You could use the search bar to look for capabilties that are relevant to your use cases. You could see that path example for Getting all account balances is `/fscmRestApi/resources/11.13.18.05/ledgerBalances`. Please down the path that you'd like to leverage, these information is critial for the next step. 
+
+![](assets/screenshots/oracle_document_example.png)
+
+With this API, you can retrieve critical financial information, including account balances, journal batches, periods, ledgers, and period status all within the virtual assistant.
+
+## Examples
+To help in understanding the Oracle Cloud API, here are a few examples of how to call some of the key endpoints. 
+
+### Example: Get Account Balances
+To get all account balances, you will need to provide query parameters such as accountGroupName, AccountName, accountingPeriod, and ledgerName.
+
+You should provide query parameters and format the link as follows:
+```
+https://<url>/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&finder=AccountGroupBalanceFinder;accountGroupName=%22%3cACCOUNT_GROUP_NAME%3e%22,accountName=%22%3cACCOUNT_NAME%3e%22,accountingPeriod=Jan-16,currency=%22%3cCURRENCY%3e%22,ledgerName=%22%3cLEDGER_NAME%3e%22&fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType
+```
+
+A curl command example of this:
+```
+curl -i -u "<username>:<password>" -H "Content-Type: application/vnd.oracle.adf.resourcecollection+json" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&finder=AccountGroupBalanceFinder;accountGroupName=Unallocated,accountName=Building Rent,accountingPeriod=Jan-16,currency=USD,ledgerName=Vision Foods - USA Ledger&fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType
+```
+
+You can find additional information [here](https://docs.oracle.com/en/cloud/saas/financials/24b/farfa/op-ledgerbalances-get.html).
+
+![](assets/screenshots/oracle_ledgerbalances_documentation.png)
+
+### Example: Get Journal Batches
+
+While some API calls require specific query parameters, there are other use cases where a simple GET request to the endpoint retrieves the necessary information. An example of that is **get journal batches**.
+
+Simple GET request to the following link:
+`https://<url>/fscmRestApi/resources/11.13.18.05/journalBatches`
+
+A curl command example of this:
+```
+curl -i -u "<username>:<password>" -H "Content-Type: application/vnd.oracle.adf.resourcecollection+json" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches
+```
+
+
+You can find additional information [here](https://docs.oracle.com/en/cloud/saas/financials/24b/farfa/op-journalbatches-get.html).
+   
+![](assets/screenshots/oracle_journalbatches_documentation.png)
+
+Understanding the JSON format is crucial for extracting the correct data to display on the virtual assistant frontend. 
+
+With this understanding, a custom OpenAPI specification has been developed to integrate this seamlessly into our virtual assistant to avoid manually calling the endpoint each time. 
+
+### Notes on ERP Integration
+While the AskFinance project is designed to integrate with Oracle Cloud API, it's worth noting that SAP can also be used as an alternative integration option. SAP is a widely used enterprise resource planning (ERP) system that can provide a rich source of financial data for analysis.
+
+**Key Considerations for SAP Integration**
+
+- SAP API: SAP provides a range of APIs that can be used to integrate with AskFinance, including the SAP Cloud Platform API and the SAP S/4HANA API.
+    - [APIs in Finance](https://help.sap.com/docs/SAP_S4HANA_CLOUD/6b39bd1d0e5e4099a5b65d835c29c696/5792333ddf3c47eaad4314b071dfd684.html)
+    - [APIs for General Ledger Accounting](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/3ab6e6fc510f4840a5508e126ef01e22/610d1f7204d94644950928f575782f22.html)
+    - [APIs for Financial Planning and Analysis](https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/b3438d89db5040508a3873ad6c6e55bc/500bb85a61604b0882be6ad0411e4538.html)
+- Data Mapping: When integrating with SAP, it's essential to map the SAP data fields to the corresponding fields in AskFinance to ensure seamless data exchange.

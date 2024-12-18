@@ -1,0 +1,37 @@
+---
+title: Prepare
+custom_edit_url: null
+---
+
+To prepare for building a AskFinance project, please ensure you have access to the following solution components:
+
+- watsonx Assistant
+- Watson Discovery
+- watsonx.ai
+- ERP System (e.g. Oracle Financials)
+- IBM Cloud Platform
+- Customized User Interface
+
+# Define Use Cases
+## Overview
+AskFinance is designed to simplify financial analysis and provide actionable insights to controllers. By leveraging conversational AI, AskFinance enables users to quickly and easily access financial data, identify trends, and make informed decisions. Here are a few examples of how AskFinance can be used:
+
+### Quarterly Financial Review
+- Use AskFinance to analyze revenue growth, expense trends, and net income over time, and identify areas for improvement.
+- Example Solution Screenshot
+    ![](assets/screenshots/example_interaction_1.png)
+
+### Budget Planning
+- Ask AskFinance to provide insights on historical expense trends and revenue growth to inform budget planning and forecasting for future quarters.
+- Example Solution Screenshot
+    ![](assets/screenshots/example_interaction_4.png)
+
+### Expense Analysis
+- Use AskFinance to analyze specific expense categories, such as travel or IT costs, and identify areas where costs can be optimized.
+- Example Solution Screenshot
+    ![](assets/screenshots/example_interaction_3.png)
+
+### Ad-Hoc Analysis
+- Ask AskFinance to provide quick answers to ad-hoc financial questions, such as "What was our revenue for Q2 2022?" or "What were our top expense categories for 2023?" or "Could you please help analyze how consistent the revenue growth was from 2020 to 2023"
+- Example Solution Screenshot
+    ![](assets/screenshots/example_interaction_2.png)

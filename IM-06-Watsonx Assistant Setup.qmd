@@ -1,0 +1,124 @@
+---
+title: watsonx Assistant Setup
+custom_edit_url: null
+---
+
+Details regarding the technical solution on how we configured Watsons Assistant to enable Core capabilities. 
+
+- Some examples of Key capabilities are:
+    - Conversational Interface: AskFinance allows users to query ERP system data through natural language conversations, enabling easy access to financial information.
+    - LLM-driven Financial Trend Analysis: Powered by watsonx.ai LLMs, AskFinance analyzes financial data to identify trends, patterns, and anomalies, providing actionable insights for informed decision-making.
+    - Budget Planning Assistance: AskFinance assists with budget planning by providing predictive analytics and scenario planning, enabling controllers to make data-driven decisions.
+- Some example questions are:
+    - How did total revenue evolve from Q1 2020 to Q4 2023?
+    - Could you please help analyze how consistent the revenue growth was from 2020 to 2023
+    - Were there any quarters where expenses exceeded revenue, leading to a net loss?
+    - Are we seeing a spike in travel costs compared to 2021 and 2022?
+    - Based on the last 3-year trend expenses compared to revenue (2020-2022), what should be the travel and expense budget to consider for fall planning in 2025?
+
+## 
+### Pre-Requisites
+
+::: {.callout-note}
+Before going on to the following steps, please make sure you have the following instances available:
+* **watsonx Assistant Instance** 
+* **Watson Discovery Instance** 
+* **watsonx.ai Instance** 
+:::
+
+### Create watsonx Assistant
+
+If you do not have an watsonx Assistant, create new bot and fill in all required information. Please see **Details** section below.
+
+::: {.callout-tip collapse="true"}
+### Details
+
+   1. Fill in Assistant name (for example “AskFinance Assistant”), and click “Next”.
+      ![](assets/screenshots/watsonx-assistant-create-1.png)
+   1. You’d see the following view. Fill in the form and click “Next”.
+      ![](assets/screenshots/watsonx-assistant-create-2.png)
+   1. Fill in a name for you assistant. For example, enter “AskFinance Assistant”. Click “Next”
+      ![](assets/screenshots/watsonx-assistant-create-3.png)
+   1. You’d see the following view. Click “Create” to complete creation of your watsonx Assistant.
+      ![](assets/screenshots/watsonx-assistant-create-4.png)
+:::
+
+## Build Custom Extensions
+To enable AI conversations with financial data, we'd need to configure the Watson Discovery custom extension to access to data corpus and configure the watsonx.ai custom extension to leverage LLM capabilties.
+
+### Create Watson Discovery Custom Extension
+
+1. Once created, in your assistant, navigate to "Integrations" page.
+1. Click "Build custom extensions" -> click "Next" -> Input Extension name `Watson Discovery` -> click "Next"
+1. Download the Watson Discovery OpenAPI json file: [watson-discovery-query-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/watson-discovery/watson-discovery-query-openapi.json) and import file to WA. This file contains the configuration to enable accessing to watson discovery from watsonx assistant.
+1. click "Next" -> click "Finish"
+1. Lower Right corner of the Watson Disovery extension, click "Add" -> click "Add" -> click "Next"
+   ![](assets/screenshots/Add_custom_extensions.png)
+1. In Authentication page, in the Authentication type dropdown, select "Basic auth"
+   1. For Username enter `apikey`
+   1. For password and discovery_url, within IBM Cloud -> resource list -> click on you Watson Discovery Instance
+   1. You'd see the following view.
+      1. Copy **API Key** and paste it in _Password_ field.
+      1. Copy **URL** and paste it in _discovery_url_ and remove `https://` from the beginning of the string
+         ![](assets/screenshots/watson_discovery_credentials.png)
+1. Click "Next", click "Finish", click "Close"
+
+### Create watsonx.ai Custom Extension
+
+1.  In your assistant, navigate to Integrations page, click "Build custom extension" -> click "Next" -> Input Extension name `watsonx.ai` -> click "Next" .
+1.  download json file: [watsonx-openapi.json](https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/language-model-watsonx/watsonx-openapi.json) and import file to WA
+1.  click "Next" -> click "Finish"
+1.  Lower Right corner of the watsonx extension, click "Add" -> click "Add" -> click "Next"
+1.  In Authentication page, in the Authentication type dropdown, select "OAuth 2.0"
+    1. For Apikey, create and copy a new API key from [API key](https://cloud.ibm.com/iam/apikeys)
+    1. For Server variables, select the region that matches where your environment is configured in.
+1.  Click "Next", click "Finish", click "Close"
+1.  Your Extensions section will appear as following screenshot once both Watson Discovery and watsonx.ai custom extensions were configured.  
+    ![](assets/screenshots/custom_extension_completed_view.png)
+
+## Upload/Download actions
+To reinstate a backup copy of actions that you exported from another service instance or environment, import the JSON file of the actions you exported.
+
+### Upload Actions:
+
+1. On the Actions page of watsonx Assistant, click on Global Settings.
+1. On the Upload/Download tab, click the Upload button and upload an actions.json file.
+
+#### Configuration after uploading Actions
+
+- Example: Configure the "**Invoke watsonx generation API**" action
+   1. On Step 1, click "Edit extension" to setup watsonx.ai custom extension.
+      ![](assets/screenshots/watsonx_assistant_watsonxai_action.png)
+   1. For the Extension options, select "watsonx.ai" and for the Operation options, select "Generation"
+   1. For "Parameters", configure the following to pass the these variables to the watsonx.ai custom extension properly.
+      1. set **version** to `watsonx_api_version` variable
+      2. set **input** to `model_input` variable
+      3. set **model_id** to `model_id` variable
+      4. set **project_id** to `watsonx_project_id` variable
+         ![](assets/screenshots/watsonx_assistant_watsonxai_custom_extension_setup.png)
+   1. Click "Apply", and click "Save".
+
+### Download Actions
+
+1. To download: On the Upload/Download tab, click on the "Download" button to export action.json file.
+![](images/upload-wxa-actions2.png)
+- Reference: [Uploading or downloading all actions](https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-upload-download-actions)
+
+## Modify AI Assistant
+
+### Conversation Starters
+
+1. Navigate to the "Preview" tab. Click the blue "Customize web chat" button.
+![](images/assistant-preview-customize-web-chat.png)
+1. Navigate to the "Home screen" tab. Modify the Greeting messages and Conversation Starters to match frequently asked questions.
+![](images/assistant-customize-homescreen.png)
+
+## Advanced watsonx Assistant Configuration
+
+### Autocorrection
+
+- To tackle typos, we leveraged watsonx assistant capability of Autocorrection.
+- To enable this feature, navitate to Actions -> All items -> Created by you. Click "Global Settings" on the upper right corner.
+![](images/watsonx-assistant-global-settings.png)
+- Navigate to the Autocorrection tab and make sure the toggle is switched to on.
+![](images/watsonx-assistant-autocorrection.png)

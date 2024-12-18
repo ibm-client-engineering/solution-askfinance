@@ -1,0 +1,25 @@
+
+---
+title: "AskFinance"
+subtitle: "AskFinance is a conversational AI platform that empowers controllers in the CFO Office to make informed decisions by providing direct access to ERP system data, leveraging LLMs to analyze financial trends, and providing actionable insights."
+author: Angel Lee, Shirley Han, Sahaj Zalavadia, OJ Ross Dua
+
+format: html
+---
+
+---
+Description: "AskFinance"
+---
+
+## Summary
+**AskFinance** is a conversational AI platform that empowers controllers in the CFO Office to make informed decisions by providing direct access to ERP system data, leveraging Large Language Models (LLMs) to analyze financial trends, and providing actionable insights.
+
+## Challenges
+- **Inefficient Monthly Close Process**: Traditional CFO/Controller Monthly Close processes are often report-intensive, time-consuming, and reliant on legacy data warehouses.
+- **Complex Financial Data**: The complexity of financial data makes it difficult to identify trends, patterns, and anomalies.
+- **Inaccurate Financial Data**: Inaccurate or incomplete financial data can lead to poor decision-making, non-compliance, and reputational damage.
+
+## Demo Video
+- AskFinance Demo Video: [Box Link](https://ibm.box.com/s/psloleqooumug2bcarn5a01eewarete3)
+- Technical Walkthrough: [Box Link](https://ibm.box.com/s/ks7qop14txptmi53l2lsn7rwki0xb60h)
+

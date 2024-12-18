@@ -1,0 +1,22 @@
+---
+title: "Key Takeaways"
+description: "Main takeaways and results of the project"
+format: html
+---
+
+## Desired Outcomes
+- **Streamlined Monthly Close Process**: Automate manual review processes and provide easy access to financial information.
+- **Actionable Insights**: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.
+- **Improved Financial Accuracy**: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.
+
+## Expected Benefits to the Business
+- **Increased Efficiency**: Automate manual review processes, freeing up resources for strategic activities.
+- **Enhanced Decision-Making**: Provide actionable insights and trends for informed decisions and optimized budget planning.
+- **Improved Financial Accuracy**: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.
+- **Reduced Risk and Compliance Costs**: Lower compliance costs and protect the organization's brand by ensuring accurate and complete financial data.
+
+## Demo Video
+- AskFinance Demo Video: [Box Link](https://ibm.box.com/s/psloleqooumug2bcarn5a01eewarete3)
+- Technical Walkthrough: [Box Link](https://ibm.box.com/s/ks7qop14txptmi53l2lsn7rwki0xb60h)
+
+

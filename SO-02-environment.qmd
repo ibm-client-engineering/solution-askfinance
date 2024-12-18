@@ -1,0 +1,20 @@
+---
+title: Environment
+description: Environment description
+custom_edit_url: null
+---
+
+AskFinance is a conversational AI platform that empowers controllersof Banks and Insurances to make informed decisions by providing directaccess to ERP system data and leveraging Large Language Models(LLMs) to analyze financial trends and assist with budget planning.
+
+To prepare for building a AskFinance project, please ensure you have access to the following solution components in your environment:
+
+- watsonx Assistant
+- Watson Discovery
+- watsonx.ai
+- ERP System (e.g. Oracle Financials)
+- IBM Cloud Platform
+- Customized User Interface
+
+Eventually, the solution components will integrate as follow:
+
+- ![](assets/screenshots/askFinance_solution_diagram.png)
