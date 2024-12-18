@@ -132,6 +132,91 @@
     ]
   },
   {
+    "objectID": "SO-01-prepare.html",
+    "href": "SO-01-prepare.html",
+    "title": "Prepare",
+    "section": "",
+    "text": "To prepare for building a AskFinance project, please ensure you have access to the following solution components:",
+    "crumbs": [
+      "Solution Overview",
+      "Prepare"
+    ]
+  },
+  {
+    "objectID": "SO-01-prepare.html#overview",
+    "href": "SO-01-prepare.html#overview",
+    "title": "Prepare",
+    "section": "Overview",
+    "text": "Overview\nAskFinance is designed to simplify financial analysis and provide actionable insights to controllers. By leveraging conversational AI, AskFinance enables users to quickly and easily access financial data, identify trends, and make informed decisions. Here are a few examples of how AskFinance can be used:\n\nQuarterly Financial Review\n\nUse AskFinance to analyze revenue growth, expense trends, and net income over time, and identify areas for improvement.\nExample Solution Screenshot \n\n\n\nBudget Planning\n\nAsk AskFinance to provide insights on historical expense trends and revenue growth to inform budget planning and forecasting for future quarters.\nExample Solution Screenshot \n\n\n\nExpense Analysis\n\nUse AskFinance to analyze specific expense categories, such as travel or IT costs, and identify areas where costs can be optimized.\nExample Solution Screenshot \n\n\n\nAd-Hoc Analysis\n\nAsk AskFinance to provide quick answers to ad-hoc financial questions, such as “What was our revenue for Q2 2022?” or “What were our top expense categories for 2023?” or “Could you please help analyze how consistent the revenue growth was from 2020 to 2023”\nExample Solution Screenshot",
+    "crumbs": [
+      "Solution Overview",
+      "Prepare"
+    ]
+  },
+  {
+    "objectID": "IM-03-Develop AI Assistant Actions.html",
+    "href": "IM-03-Develop AI Assistant Actions.html",
+    "title": "Develop AI Assistant Actions",
+    "section": "",
+    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
+    "crumbs": [
+      "Implementation Methodology",
+      "03-Develop AI Assistant Actions"
+    ]
+  },
+  {
+    "objectID": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
+    "href": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
+    "title": "Develop AI Assistant Actions",
+    "section": "",
+    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
+    "crumbs": [
+      "Implementation Methodology",
+      "03-Develop AI Assistant Actions"
+    ]
+  },
+  {
+    "objectID": "SO-02-environment.html",
+    "href": "SO-02-environment.html",
+    "title": "Environment",
+    "section": "",
+    "text": "AskFinance is a conversational AI platform that empowers controllersof Banks and Insurances to make informed decisions by providing directaccess to ERP system data and leveraging Large Language Models(LLMs) to analyze financial trends and assist with budget planning.\nTo prepare for building a AskFinance project, please ensure you have access to the following solution components in your environment:\n\nwatsonx Assistant\nWatson Discovery\nwatsonx.ai\nERP System (e.g. Oracle Financials)\nIBM Cloud Platform\nCustomized User Interface\n\nEventually, the solution components will integrate as follow:",
+    "crumbs": [
+      "Solution Overview",
+      "Environment"
+    ]
+  },
+  {
+    "objectID": "key-takeaway.html",
+    "href": "key-takeaway.html",
+    "title": "Key Takeaways",
+    "section": "",
+    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
+    "crumbs": [
+      "Key Takeaways"
+    ]
+  },
+  {
+    "objectID": "key-takeaway.html#desired-outcomes",
+    "href": "key-takeaway.html#desired-outcomes",
+    "title": "Key Takeaways",
+    "section": "",
+    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
+    "crumbs": [
+      "Key Takeaways"
+    ]
+  },
+  {
+    "objectID": "key-takeaway.html#expected-benefits-to-the-business",
+    "href": "key-takeaway.html#expected-benefits-to-the-business",
+    "title": "Key Takeaways",
+    "section": "Expected Benefits to the Business",
+    "text": "Expected Benefits to the Business\n\nIncreased Efficiency: Automate manual review processes, freeing up resources for strategic activities.\nEnhanced Decision-Making: Provide actionable insights and trends for informed decisions and optimized budget planning.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.\nReduced Risk and Compliance Costs: Lower compliance costs and protect the organization’s brand by ensuring accurate and complete financial data.",
+    "crumbs": [
+      "Key Takeaways"
+    ]
+  },
+  {
     "objectID": "IM-04-Data Preprocessing.html",
     "href": "IM-04-Data Preprocessing.html",
     "title": "Data Preprocessing",
@@ -195,112 +280,6 @@
     "crumbs": [
       "Implementation Methodology",
       "04-Data Preprocessing"
-    ]
-  },
-  {
-    "objectID": "key-takeaway.html",
-    "href": "key-takeaway.html",
-    "title": "Key Takeaways",
-    "section": "",
-    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
-    "crumbs": [
-      "Key Takeaways"
-    ]
-  },
-  {
-    "objectID": "key-takeaway.html#desired-outcomes",
-    "href": "key-takeaway.html#desired-outcomes",
-    "title": "Key Takeaways",
-    "section": "",
-    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
-    "crumbs": [
-      "Key Takeaways"
-    ]
-  },
-  {
-    "objectID": "key-takeaway.html#expected-benefits-to-the-business",
-    "href": "key-takeaway.html#expected-benefits-to-the-business",
-    "title": "Key Takeaways",
-    "section": "Expected Benefits to the Business",
-    "text": "Expected Benefits to the Business\n\nIncreased Efficiency: Automate manual review processes, freeing up resources for strategic activities.\nEnhanced Decision-Making: Provide actionable insights and trends for informed decisions and optimized budget planning.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.\nReduced Risk and Compliance Costs: Lower compliance costs and protect the organization’s brand by ensuring accurate and complete financial data.",
-    "crumbs": [
-      "Key Takeaways"
-    ]
-  },
-  {
-    "objectID": "key-takeaway.html#demo-video",
-    "href": "key-takeaway.html#demo-video",
-    "title": "Key Takeaways",
-    "section": "Demo Video",
-    "text": "Demo Video\n\nAskFinance Demo Video: Box Link\nTechnical Walkthrough: Box Link",
-    "crumbs": [
-      "Key Takeaways"
-    ]
-  },
-  {
-    "objectID": "SO-02-environment.html",
-    "href": "SO-02-environment.html",
-    "title": "Environment",
-    "section": "",
-    "text": "AskFinance is a conversational AI platform that empowers controllersof Banks and Insurances to make informed decisions by providing directaccess to ERP system data and leveraging Large Language Models(LLMs) to analyze financial trends and assist with budget planning.\nTo prepare for building a AskFinance project, please ensure you have access to the following solution components in your environment:\n\nwatsonx Assistant\nWatson Discovery\nwatsonx.ai\nERP System (e.g. Oracle Financials)\nIBM Cloud Platform\nCustomized User Interface\n\nEventually, the solution components will integrate as follow:",
-    "crumbs": [
-      "Solution Overview",
-      "Environment"
-    ]
-  },
-  {
-    "objectID": "IM-03-Develop AI Assistant Actions.html",
-    "href": "IM-03-Develop AI Assistant Actions.html",
-    "title": "Develop AI Assistant Actions",
-    "section": "",
-    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
-    "crumbs": [
-      "Implementation Methodology",
-      "03-Develop AI Assistant Actions"
-    ]
-  },
-  {
-    "objectID": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
-    "href": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
-    "title": "Develop AI Assistant Actions",
-    "section": "",
-    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
-    "crumbs": [
-      "Implementation Methodology",
-      "03-Develop AI Assistant Actions"
-    ]
-  },
-  {
-    "objectID": "SO-01-prepare.html",
-    "href": "SO-01-prepare.html",
-    "title": "Prepare",
-    "section": "",
-    "text": "To prepare for building a AskFinance project, please ensure you have access to the following solution components:",
-    "crumbs": [
-      "Solution Overview",
-      "Prepare"
-    ]
-  },
-  {
-    "objectID": "SO-01-prepare.html#overview",
-    "href": "SO-01-prepare.html#overview",
-    "title": "Prepare",
-    "section": "Overview",
-    "text": "Overview\nAskFinance is designed to simplify financial analysis and provide actionable insights to controllers. By leveraging conversational AI, AskFinance enables users to quickly and easily access financial data, identify trends, and make informed decisions. Here are a few examples of how AskFinance can be used:\n\nQuarterly Financial Review\n\nUse AskFinance to analyze revenue growth, expense trends, and net income over time, and identify areas for improvement.\nExample Solution Screenshot \n\n\n\nBudget Planning\n\nAsk AskFinance to provide insights on historical expense trends and revenue growth to inform budget planning and forecasting for future quarters.\nExample Solution Screenshot \n\n\n\nExpense Analysis\n\nUse AskFinance to analyze specific expense categories, such as travel or IT costs, and identify areas where costs can be optimized.\nExample Solution Screenshot \n\n\n\nAd-Hoc Analysis\n\nAsk AskFinance to provide quick answers to ad-hoc financial questions, such as “What was our revenue for Q2 2022?” or “What were our top expense categories for 2023?” or “Could you please help analyze how consistent the revenue growth was from 2020 to 2023”\nExample Solution Screenshot",
-    "crumbs": [
-      "Solution Overview",
-      "Prepare"
-    ]
-  },
-  {
-    "objectID": "SO-03-troubleshooting.html",
-    "href": "SO-03-troubleshooting.html",
-    "title": "Troubleshooting",
-    "section": "",
-    "text": "Troubleshooting",
-    "crumbs": [
-      "Solution Overview",
-      "Troubleshooting"
     ]
   },
   {
