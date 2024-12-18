@@ -15,8 +15,4 @@ format: html
 - **Improved Financial Accuracy**: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.
 - **Reduced Risk and Compliance Costs**: Lower compliance costs and protect the organization's brand by ensuring accurate and complete financial data.
 
-## Demo Video
-- AskFinance Demo Video: [Box Link](https://ibm.box.com/s/psloleqooumug2bcarn5a01eewarete3)
-- Technical Walkthrough: [Box Link](https://ibm.box.com/s/ks7qop14txptmi53l2lsn7rwki0xb60h)
-
 
