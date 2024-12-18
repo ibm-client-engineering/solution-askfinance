@@ -1,1 +1,1 @@
-Sitemap: https://ibm-client-engineering.github.io/solution-AskFinance/sitemap.xml
+Sitemap: https://ibm-client-engineering.github.io/solution-askfinance/sitemap.xml
