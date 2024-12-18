@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step Three – Project Name</title>
+<title>Understand Oracle Cloud API – AskFinance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./stepone-imp.html" rel="next">
-<link href="./environment.html" rel="prev">
+<link href="./IM-02-Develop Custom Extension OpenAPI Spec.html" rel="next">
+<link href="./SO-03-troubleshooting.html" rel="prev">
 <link href="./images/bee.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./images/IBMlogo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Project Name</span>
+    <span class="navbar-title">AskFinance</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ibm-client-engineering"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.ibm.com/ibm-client-engineering/solution-AskFinance"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prepare.html">Solution Overview</a></li><li class="breadcrumb-item"><a href="./troubleshooting.html">Troubleshooting</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">01-Understand Oracle Cloud API</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,28 +144,28 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Solution Overview</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prepare.html" class="sidebar-item-text sidebar-link">
+  <a href="./SO-01-prepare.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prepare</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./environment.html" class="sidebar-item-text sidebar-link">
+  <a href="./SO-02-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link active">
+  <a href="./SO-03-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
@@ -173,29 +173,59 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Implementation Methodology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stepone-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step One</span></a>
+  <a href="./IM-01-Understand Oracle Cloud API.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">01-Understand Oracle Cloud API</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./steptwo-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step Two</span></a>
+  <a href="./IM-02-Develop Custom Extension OpenAPI Spec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-Develop Custom Extension OpenAPI Spec</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stepthree-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step Three</span></a>
+  <a href="./IM-03-Develop AI Assistant Actions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-Develop AI Assistant Actions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-04-Data Preprocessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-Data Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-05-Watson Discovery Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05-Watson Discovery Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-06-Watsonx Assistant Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06-Watsonx Assistant Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-07-Watsonxai Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07-Watsonxai Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-08-Hosted Static Site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08-Hosted Static Site</span></a>
   </div>
 </li>
       </ul>
@@ -216,16 +246,21 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-three-solution" id="toc-step-three-solution" class="nav-link active" data-scroll-target="#step-three-solution">Step Three Solution</a></li>
+  <li><a href="#examples" id="toc-examples" class="nav-link active" data-scroll-target="#examples">Examples</a>
+  <ul class="collapse">
+  <li><a href="#example-get-account-balances" id="toc-example-get-account-balances" class="nav-link" data-scroll-target="#example-get-account-balances">Example: Get Account Balances</a></li>
+  <li><a href="#example-get-journal-batches" id="toc-example-get-journal-batches" class="nav-link" data-scroll-target="#example-get-journal-batches">Example: Get Journal Batches</a></li>
+  <li><a href="#notes-on-erp-integration" id="toc-notes-on-erp-integration" class="nav-link" data-scroll-target="#notes-on-erp-integration">Notes on ERP Integration</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prepare.html">Solution Overview</a></li><li class="breadcrumb-item"><a href="./troubleshooting.html">Troubleshooting</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">01-Understand Oracle Cloud API</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Step Three</h1>
+<h1 class="title">Understand Oracle Cloud API</h1>
 </div>
 
 
@@ -242,10 +277,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="step-three-solution" class="level3">
-<h3 class="anchored" data-anchor-id="step-three-solution">Step Three Solution</h3>
+<p>Oracle APIs offer powerful tools for developers to integrate, extend, and automate Oracle’s suite of applications and services. For this solution, we leverage the REST API for Oracle Fusion Cloud Financials, enabling seamless access to essential financial data. You can find the documentation here: <a href="https://docs.oracle.com/en/cloud/saas/financials/24b/farfa/rest-endpoints.html">link</a>.</p>
+<ul>
+<li>Below is an example of the Ledger Balances REST API documetation page. You could use the search bar to look for capabilties that are relevant to your use cases. You could see that path example for Getting all account balances is <code>/fscmRestApi/resources/11.13.18.05/ledgerBalances</code>. Please down the path that you’d like to leverage, these information is critial for the next step.</li>
+</ul>
+<p><img src="assets/screenshots/oracle_document_example.png" class="img-fluid"></p>
+<p>With this API, you can retrieve critical financial information, including account balances, journal batches, periods, ledgers, and period status all within the virtual assistant.</p>
+<section id="examples" class="level2">
+<h2 class="anchored" data-anchor-id="examples">Examples</h2>
+<p>To help in understanding the Oracle Cloud API, here are a few examples of how to call some of the key endpoints.</p>
+<section id="example-get-account-balances" class="level3">
+<h3 class="anchored" data-anchor-id="example-get-account-balances">Example: Get Account Balances</h3>
+<p>To get all account balances, you will need to provide query parameters such as accountGroupName, AccountName, accountingPeriod, and ledgerName.</p>
+<p>You should provide query parameters and format the link as follows:</p>
+<pre><code>https://&lt;url&gt;/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&amp;finder=AccountGroupBalanceFinder;accountGroupName=%22%3cACCOUNT_GROUP_NAME%3e%22,accountName=%22%3cACCOUNT_NAME%3e%22,accountingPeriod=Jan-16,currency=%22%3cCURRENCY%3e%22,ledgerName=%22%3cLEDGER_NAME%3e%22&amp;fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType</code></pre>
+<p>A curl command example of this:</p>
+<pre><code>curl -i -u "&lt;username&gt;:&lt;password&gt;" -H "Content-Type: application/vnd.oracle.adf.resourcecollection+json" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&amp;finder=AccountGroupBalanceFinder;accountGroupName=Unallocated,accountName=Building Rent,accountingPeriod=Jan-16,currency=USD,ledgerName=Vision Foods - USA Ledger&amp;fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType</code></pre>
+<p>You can find additional information <a href="https://docs.oracle.com/en/cloud/saas/financials/24b/farfa/op-ledgerbalances-get.html">here</a>.</p>
+<p><img src="assets/screenshots/oracle_ledgerbalances_documentation.png" class="img-fluid"></p>
+</section>
+<section id="example-get-journal-batches" class="level3">
+<h3 class="anchored" data-anchor-id="example-get-journal-batches">Example: Get Journal Batches</h3>
+<p>While some API calls require specific query parameters, there are other use cases where a simple GET request to the endpoint retrieves the necessary information. An example of that is <strong>get journal batches</strong>.</p>
+<p>Simple GET request to the following link: <code>https://&lt;url&gt;/fscmRestApi/resources/11.13.18.05/journalBatches</code></p>
+<p>A curl command example of this:</p>
+<pre><code>curl -i -u "&lt;username&gt;:&lt;password&gt;" -H "Content-Type: application/vnd.oracle.adf.resourcecollection+json" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches</code></pre>
+<p>You can find additional information <a href="https://docs.oracle.com/en/cloud/saas/financials/24b/farfa/op-journalbatches-get.html">here</a>.</p>
+<p><img src="assets/screenshots/oracle_journalbatches_documentation.png" class="img-fluid"></p>
+<p>Understanding the JSON format is crucial for extracting the correct data to display on the virtual assistant frontend.</p>
+<p>With this understanding, a custom OpenAPI specification has been developed to integrate this seamlessly into our virtual assistant to avoid manually calling the endpoint each time.</p>
+</section>
+<section id="notes-on-erp-integration" class="level3">
+<h3 class="anchored" data-anchor-id="notes-on-erp-integration">Notes on ERP Integration</h3>
+<p>While the AskFinance project is designed to integrate with Oracle Cloud API, it’s worth noting that SAP can also be used as an alternative integration option. SAP is a widely used enterprise resource planning (ERP) system that can provide a rich source of financial data for analysis.</p>
+<p><strong>Key Considerations for SAP Integration</strong></p>
+<ul>
+<li>SAP API: SAP provides a range of APIs that can be used to integrate with AskFinance, including the SAP Cloud Platform API and the SAP S/4HANA API.
+<ul>
+<li><a href="https://help.sap.com/docs/SAP_S4HANA_CLOUD/6b39bd1d0e5e4099a5b65d835c29c696/5792333ddf3c47eaad4314b071dfd684.html">APIs in Finance</a></li>
+<li><a href="https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/3ab6e6fc510f4840a5508e126ef01e22/610d1f7204d94644950928f575782f22.html">APIs for General Ledger Accounting</a></li>
+<li><a href="https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/b3438d89db5040508a3873ad6c6e55bc/500bb85a61604b0882be6ad0411e4538.html">APIs for Financial Planning and Analysis</a></li>
+</ul></li>
+<li>Data Mapping: When integrating with SAP, it’s essential to map the SAP data fields to the corresponding fields in AskFinance to ensure seamless data exchange.</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -668,13 +745,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./environment.html" class="pagination-link" aria-label="Environment">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Environment</span>
+      <a href="./SO-03-troubleshooting.html" class="pagination-link" aria-label="Troubleshooting">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Troubleshooting</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./stepone-imp.html" class="pagination-link" aria-label="Step One">
-        <span class="nav-page-text">Step One</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./IM-02-Develop Custom Extension OpenAPI Spec.html" class="pagination-link" aria-label="02-Develop Custom Extension OpenAPI Spec">
+        <span class="nav-page-text">02-Develop Custom Extension OpenAPI Spec</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

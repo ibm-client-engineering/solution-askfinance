@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step Two – Project Name</title>
+<title>watsonx Assistant Setup – AskFinance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./troubleshooting.html" rel="next">
-<link href="./prepare.html" rel="prev">
+<link href="./IM-07-Watsonxai Setup.html" rel="next">
+<link href="./IM-05-Watson Discovery Setup.html" rel="prev">
 <link href="./images/bee.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./images/IBMlogo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Project Name</span>
+    <span class="navbar-title">AskFinance</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ibm-client-engineering"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.ibm.com/ibm-client-engineering/solution-AskFinance"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prepare.html">Solution Overview</a></li><li class="breadcrumb-item"><a href="./environment.html">Environment</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-06-Watsonx Assistant Setup.html">06-Watsonx Assistant Setup</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,28 +144,28 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Solution Overview</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prepare.html" class="sidebar-item-text sidebar-link">
+  <a href="./SO-01-prepare.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prepare</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./environment.html" class="sidebar-item-text sidebar-link active">
+  <a href="./SO-02-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="./SO-03-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
@@ -173,29 +173,59 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Implementation Methodology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stepone-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step One</span></a>
+  <a href="./IM-01-Understand Oracle Cloud API.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-Understand Oracle Cloud API</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./steptwo-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step Two</span></a>
+  <a href="./IM-02-Develop Custom Extension OpenAPI Spec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02-Develop Custom Extension OpenAPI Spec</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stepthree-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step Three</span></a>
+  <a href="./IM-03-Develop AI Assistant Actions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-Develop AI Assistant Actions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-04-Data Preprocessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-Data Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-05-Watson Discovery Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05-Watson Discovery Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-06-Watsonx Assistant Setup.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">06-Watsonx Assistant Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-07-Watsonxai Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07-Watsonxai Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-08-Hosted Static Site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08-Hosted Static Site</span></a>
   </div>
 </li>
       </ul>
@@ -216,16 +246,38 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-two-solution" id="toc-step-two-solution" class="nav-link active" data-scroll-target="#step-two-solution">Step Two Solution</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link active" data-scroll-target="#section"></a>
+  <ul class="collapse">
+  <li><a href="#pre-requisites" id="toc-pre-requisites" class="nav-link" data-scroll-target="#pre-requisites">Pre-Requisites</a></li>
+  <li><a href="#create-watsonx-assistant" id="toc-create-watsonx-assistant" class="nav-link" data-scroll-target="#create-watsonx-assistant">Create watsonx Assistant</a></li>
+  </ul></li>
+  <li><a href="#build-custom-extensions" id="toc-build-custom-extensions" class="nav-link" data-scroll-target="#build-custom-extensions">Build Custom Extensions</a>
+  <ul class="collapse">
+  <li><a href="#create-watson-discovery-custom-extension" id="toc-create-watson-discovery-custom-extension" class="nav-link" data-scroll-target="#create-watson-discovery-custom-extension">Create Watson Discovery Custom Extension</a></li>
+  <li><a href="#create-watsonx.ai-custom-extension" id="toc-create-watsonx.ai-custom-extension" class="nav-link" data-scroll-target="#create-watsonx.ai-custom-extension">Create watsonx.ai Custom Extension</a></li>
+  </ul></li>
+  <li><a href="#uploaddownload-actions" id="toc-uploaddownload-actions" class="nav-link" data-scroll-target="#uploaddownload-actions">Upload/Download actions</a>
+  <ul class="collapse">
+  <li><a href="#upload-actions" id="toc-upload-actions" class="nav-link" data-scroll-target="#upload-actions">Upload Actions:</a></li>
+  <li><a href="#download-actions" id="toc-download-actions" class="nav-link" data-scroll-target="#download-actions">Download Actions</a></li>
+  </ul></li>
+  <li><a href="#modify-ai-assistant" id="toc-modify-ai-assistant" class="nav-link" data-scroll-target="#modify-ai-assistant">Modify AI Assistant</a>
+  <ul class="collapse">
+  <li><a href="#conversation-starters" id="toc-conversation-starters" class="nav-link" data-scroll-target="#conversation-starters">Conversation Starters</a></li>
+  </ul></li>
+  <li><a href="#advanced-watsonx-assistant-configuration" id="toc-advanced-watsonx-assistant-configuration" class="nav-link" data-scroll-target="#advanced-watsonx-assistant-configuration">Advanced watsonx Assistant Configuration</a>
+  <ul class="collapse">
+  <li><a href="#autocorrection" id="toc-autocorrection" class="nav-link" data-scroll-target="#autocorrection">Autocorrection</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prepare.html">Solution Overview</a></li><li class="breadcrumb-item"><a href="./environment.html">Environment</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-06-Watsonx Assistant Setup.html">06-Watsonx Assistant Setup</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Step Two</h1>
+<h1 class="title">watsonx Assistant Setup</h1>
 </div>
 
 
@@ -242,13 +294,169 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="step-two-solution" class="level3">
-<h3 class="anchored" data-anchor-id="step-two-solution">Step Two Solution</h3>
-<p>Phasellus at risus egestas, ultricies tortor efficitur, auctor augue. Suspendisse finibus maximus dui nec condimentum. Proin fringilla efficitur vehicula. Suspendisse sem lacus, iaculis quis erat et, facilisis sagittis est. Sed sapien justo, condimentum vitae aliquet sed, faucibus at ex. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Fusce placerat ante eget diam tincidunt, vitae tincidunt sapien malesuada. Nullam ullamcorper justo eros. Duis ultricies aliquam dui, id aliquam lorem congue vitae. Ut porttitor, tellus eu dignissim semper, turpis nunc cursus libero, sed placerat est dui non enim.</p>
-<p>Vestibulum libero dolor, vehicula vitae risus non, consequat gravida neque. Maecenas a posuere sem. Quisque dignissim porta pretium. Nam mattis lacus commodo lobortis consequat. Vestibulum at massa a quam egestas accumsan. Fusce ac neque eu libero maximus aliquet id quis metus. In sodales neque ut turpis iaculis vehicula. Sed volutpat, tellus non laoreet aliquet, risus felis ornare dolor, interdum venenatis turpis metus in lorem. Aliquam quam ligula, porttitor non ultrices ac, lacinia ullamcorper massa. Integer molestie eleifend urna, imperdiet dignissim tellus malesuada ac. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tristique sem ac purus interdum, vitae pharetra erat fringilla. Integer non nunc a eros porttitor rutrum. Suspendisse ut libero urna. Vestibulum vitae est at diam vestibulum aliquet. Donec porta nunc eget lobortis mollis.</p>
-<p>Vestibulum luctus sodales odio, at luctus lacus lobortis a. Aliquam vulputate id turpis sit amet bibendum. Donec a dignissim tellus, vel vehicula erat. Pellentesque hendrerit ex magna, at dictum est pretium a. Vivamus faucibus ipsum lectus, ut elementum diam interdum scelerisque. Cras magna sapien, tincidunt quis eleifend at, tincidunt non eros. Aliquam ac augue turpis.</p>
+<p>Details regarding the technical solution on how we configured Watsons Assistant to enable Core capabilities.</p>
+<ul>
+<li>Some examples of Key capabilities are:
+<ul>
+<li>Conversational Interface: AskFinance allows users to query ERP system data through natural language conversations, enabling easy access to financial information.</li>
+<li>LLM-driven Financial Trend Analysis: Powered by watsonx.ai LLMs, AskFinance analyzes financial data to identify trends, patterns, and anomalies, providing actionable insights for informed decision-making.</li>
+<li>Budget Planning Assistance: AskFinance assists with budget planning by providing predictive analytics and scenario planning, enabling controllers to make data-driven decisions.</li>
+</ul></li>
+<li>Some example questions are:
+<ul>
+<li>How did total revenue evolve from Q1 2020 to Q4 2023?</li>
+<li>Could you please help analyze how consistent the revenue growth was from 2020 to 2023</li>
+<li>Were there any quarters where expenses exceeded revenue, leading to a net loss?</li>
+<li>Are we seeing a spike in travel costs compared to 2021 and 2022?</li>
+<li>Based on the last 3-year trend expenses compared to revenue (2020-2022), what should be the travel and expense budget to consider for fall planning in 2025?</li>
+</ul></li>
+</ul>
+<section id="section" class="level2">
+<h2 class="anchored" data-anchor-id="section"></h2>
+<section id="pre-requisites" class="level3">
+<h3 class="anchored" data-anchor-id="pre-requisites">Pre-Requisites</h3>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Before going on to the following steps, please make sure you have the following instances available: * <strong>watsonx Assistant Instance</strong> * <strong>Watson Discovery Instance</strong> * <strong>watsonx.ai Instance</strong></p>
+</div>
+</div>
+</section>
+<section id="create-watsonx-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="create-watsonx-assistant">Create watsonx Assistant</h3>
+<p>If you do not have an watsonx Assistant, create new bot and fill in all required information. Please see <strong>Details</strong> section below.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Details
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Fill in Assistant name (for example “AskFinance Assistant”), and click “Next”. <img src="assets/screenshots/watsonx-assistant-create-1.png" class="img-fluid"></li>
+<li>You’d see the following view. Fill in the form and click “Next”. <img src="assets/screenshots/watsonx-assistant-create-2.png" class="img-fluid"></li>
+<li>Fill in a name for you assistant. For example, enter “AskFinance Assistant”. Click “Next” <img src="assets/screenshots/watsonx-assistant-create-3.png" class="img-fluid"></li>
+<li>You’d see the following view. Click “Create” to complete creation of your watsonx Assistant. <img src="assets/screenshots/watsonx-assistant-create-4.png" class="img-fluid"></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="build-custom-extensions" class="level2">
+<h2 class="anchored" data-anchor-id="build-custom-extensions">Build Custom Extensions</h2>
+<p>To enable AI conversations with financial data, we’d need to configure the Watson Discovery custom extension to access to data corpus and configure the watsonx.ai custom extension to leverage LLM capabilties.</p>
+<section id="create-watson-discovery-custom-extension" class="level3">
+<h3 class="anchored" data-anchor-id="create-watson-discovery-custom-extension">Create Watson Discovery Custom Extension</h3>
+<ol type="1">
+<li>Once created, in your assistant, navigate to “Integrations” page.</li>
+<li>Click “Build custom extensions” -&gt; click “Next” -&gt; Input Extension name <code>Watson Discovery</code> -&gt; click “Next”</li>
+<li>Download the Watson Discovery OpenAPI json file: <a href="https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/watson-discovery/watson-discovery-query-openapi.json">watson-discovery-query-openapi.json</a> and import file to WA. This file contains the configuration to enable accessing to watson discovery from watsonx assistant.</li>
+<li>click “Next” -&gt; click “Finish”</li>
+<li>Lower Right corner of the Watson Disovery extension, click “Add” -&gt; click “Add” -&gt; click “Next” <img src="assets/screenshots/Add_custom_extensions.png" class="img-fluid"></li>
+<li>In Authentication page, in the Authentication type dropdown, select “Basic auth”
+<ol type="1">
+<li>For Username enter <code>apikey</code></li>
+<li>For password and discovery_url, within IBM Cloud -&gt; resource list -&gt; click on you Watson Discovery Instance</li>
+<li>You’d see the following view.
+<ol type="1">
+<li>Copy <strong>API Key</strong> and paste it in <em>Password</em> field.</li>
+<li>Copy <strong>URL</strong> and paste it in <em>discovery_url</em> and remove <code>https://</code> from the beginning of the string <img src="assets/screenshots/watson_discovery_credentials.png" class="img-fluid"></li>
+</ol></li>
+</ol></li>
+<li>Click “Next”, click “Finish”, click “Close”</li>
+</ol>
+</section>
+<section id="create-watsonx.ai-custom-extension" class="level3">
+<h3 class="anchored" data-anchor-id="create-watsonx.ai-custom-extension">Create watsonx.ai Custom Extension</h3>
+<ol type="1">
+<li>In your assistant, navigate to Integrations page, click “Build custom extension” -&gt; click “Next” -&gt; Input Extension name <code>watsonx.ai</code> -&gt; click “Next” .</li>
+<li>download json file: <a href="https://github.com/watson-developer-cloud/assistant-toolkit/blob/master/integrations/extensions/starter-kits/language-model-watsonx/watsonx-openapi.json">watsonx-openapi.json</a> and import file to WA</li>
+<li>click “Next” -&gt; click “Finish”</li>
+<li>Lower Right corner of the watsonx extension, click “Add” -&gt; click “Add” -&gt; click “Next”</li>
+<li>In Authentication page, in the Authentication type dropdown, select “OAuth 2.0”
+<ol type="1">
+<li>For Apikey, create and copy a new API key from <a href="https://cloud.ibm.com/iam/apikeys">API key</a></li>
+<li>For Server variables, select the region that matches where your environment is configured in.</li>
+</ol></li>
+<li>Click “Next”, click “Finish”, click “Close”</li>
+<li>Your Extensions section will appear as following screenshot once both Watson Discovery and watsonx.ai custom extensions were configured.<br>
+<img src="assets/screenshots/custom_extension_completed_view.png" class="img-fluid"></li>
+</ol>
+</section>
+</section>
+<section id="uploaddownload-actions" class="level2">
+<h2 class="anchored" data-anchor-id="uploaddownload-actions">Upload/Download actions</h2>
+<p>To reinstate a backup copy of actions that you exported from another service instance or environment, import the JSON file of the actions you exported.</p>
+<section id="upload-actions" class="level3">
+<h3 class="anchored" data-anchor-id="upload-actions">Upload Actions:</h3>
+<ol type="1">
+<li>On the Actions page of watsonx Assistant, click on Global Settings.</li>
+<li>On the Upload/Download tab, click the Upload button and upload an actions.json file.</li>
+</ol>
+<section id="configuration-after-uploading-actions" class="level4">
+<h4 class="anchored" data-anchor-id="configuration-after-uploading-actions">Configuration after uploading Actions</h4>
+<ul>
+<li>Example: Configure the “<strong>Invoke watsonx generation API</strong>” action
+<ol type="1">
+<li>On Step 1, click “Edit extension” to setup watsonx.ai custom extension. <img src="assets/screenshots/watsonx_assistant_watsonxai_action.png" class="img-fluid"></li>
+<li>For the Extension options, select “watsonx.ai” and for the Operation options, select “Generation”</li>
+<li>For “Parameters”, configure the following to pass the these variables to the watsonx.ai custom extension properly.
+<ol type="1">
+<li>set <strong>version</strong> to <code>watsonx_api_version</code> variable</li>
+<li>set <strong>input</strong> to <code>model_input</code> variable</li>
+<li>set <strong>model_id</strong> to <code>model_id</code> variable</li>
+<li>set <strong>project_id</strong> to <code>watsonx_project_id</code> variable <img src="assets/screenshots/watsonx_assistant_watsonxai_custom_extension_setup.png" class="img-fluid"></li>
+</ol></li>
+<li>Click “Apply”, and click “Save”.</li>
+</ol></li>
+</ul>
+</section>
+</section>
+<section id="download-actions" class="level3">
+<h3 class="anchored" data-anchor-id="download-actions">Download Actions</h3>
+<ol type="1">
+<li>To download: On the Upload/Download tab, click on the “Download” button to export action.json file. <img src="images/upload-wxa-actions2.png" class="img-fluid"></li>
+</ol>
+<ul>
+<li>Reference: <a href="https://cloud.ibm.com/docs/watson-assistant?topic=watson-assistant-upload-download-actions">Uploading or downloading all actions</a></li>
+</ul>
+</section>
+</section>
+<section id="modify-ai-assistant" class="level2">
+<h2 class="anchored" data-anchor-id="modify-ai-assistant">Modify AI Assistant</h2>
+<section id="conversation-starters" class="level3">
+<h3 class="anchored" data-anchor-id="conversation-starters">Conversation Starters</h3>
+<ol type="1">
+<li>Navigate to the “Preview” tab. Click the blue “Customize web chat” button. <img src="images/assistant-preview-customize-web-chat.png" class="img-fluid"></li>
+<li>Navigate to the “Home screen” tab. Modify the Greeting messages and Conversation Starters to match frequently asked questions. <img src="images/assistant-customize-homescreen.png" class="img-fluid"></li>
+</ol>
+</section>
+</section>
+<section id="advanced-watsonx-assistant-configuration" class="level2">
+<h2 class="anchored" data-anchor-id="advanced-watsonx-assistant-configuration">Advanced watsonx Assistant Configuration</h2>
+<section id="autocorrection" class="level3">
+<h3 class="anchored" data-anchor-id="autocorrection">Autocorrection</h3>
+<ul>
+<li>To tackle typos, we leveraged watsonx assistant capability of Autocorrection.</li>
+<li>To enable this feature, navitate to Actions -&gt; All items -&gt; Created by you. Click “Global Settings” on the upper right corner. <img src="images/watsonx-assistant-global-settings.png" class="img-fluid"></li>
+<li>Navigate to the Autocorrection tab and make sure the toggle is switched to on. <img src="images/watsonx-assistant-autocorrection.png" class="img-fluid"></li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -671,13 +879,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./prepare.html" class="pagination-link" aria-label="Prepare">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prepare</span>
+      <a href="./IM-05-Watson Discovery Setup.html" class="pagination-link" aria-label="05-Watson Discovery Setup">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">05-Watson Discovery Setup</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./troubleshooting.html" class="pagination-link" aria-label="Troubleshooting">
-        <span class="nav-page-text">Troubleshooting</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./IM-07-Watsonxai Setup.html" class="pagination-link" aria-label="07-Watsonxai Setup">
+        <span class="nav-page-text">07-Watsonxai Setup</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

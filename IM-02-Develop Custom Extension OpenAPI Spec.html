@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Step One – Project Name</title>
+<title>Develop Custom Extension OpenAPI Spec – AskFinance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -29,8 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./environment.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./IM-03-Develop AI Assistant Actions.html" rel="next">
+<link href="./IM-01-Understand Oracle Cloud API.html" rel="prev">
 <link href="./images/bee.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -82,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
     <img src="./images/IBMlogo.png" alt="" class="navbar-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Project Name</span>
+    <span class="navbar-title">AskFinance</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,7 +92,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/ibm-client-engineering"> <i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.ibm.com/ibm-client-engineering/solution-AskFinance"> <i class="bi bi-github" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prepare.html">Solution Overview</a></li><li class="breadcrumb-item"><a href="./prepare.html">Prepare</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-02-Develop Custom Extension OpenAPI Spec.html">02-Develop Custom Extension OpenAPI Spec</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -144,28 +144,28 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Solution Overview</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./prepare.html" class="sidebar-item-text sidebar-link active">
+  <a href="./SO-01-prepare.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Prepare</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./environment.html" class="sidebar-item-text sidebar-link">
+  <a href="./SO-02-environment.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Environment</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./troubleshooting.html" class="sidebar-item-text sidebar-link">
+  <a href="./SO-03-troubleshooting.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Troubleshooting</span></a>
   </div>
 </li>
@@ -173,29 +173,59 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Implementation Methodology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stepone-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step One</span></a>
+  <a href="./IM-01-Understand Oracle Cloud API.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01-Understand Oracle Cloud API</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./steptwo-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step Two</span></a>
+  <a href="./IM-02-Develop Custom Extension OpenAPI Spec.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">02-Develop Custom Extension OpenAPI Spec</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./stepthree-imp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Step Three</span></a>
+  <a href="./IM-03-Develop AI Assistant Actions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">03-Develop AI Assistant Actions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-04-Data Preprocessing.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">04-Data Preprocessing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-05-Watson Discovery Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">05-Watson Discovery Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-06-Watsonx Assistant Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">06-Watsonx Assistant Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-07-Watsonxai Setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">07-Watsonxai Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./IM-08-Hosted Static Site.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">08-Hosted Static Site</span></a>
   </div>
 </li>
       </ul>
@@ -216,16 +246,19 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#step-one-solution---the-what" id="toc-step-one-solution---the-what" class="nav-link active" data-scroll-target="#step-one-solution---the-what">Step One Solution - The What</a></li>
+  <li><a href="#account-balance-inquiry-journey" id="toc-account-balance-inquiry-journey" class="nav-link active" data-scroll-target="#account-balance-inquiry-journey">Account Balance Inquiry Journey</a></li>
+  <li><a href="#journal-batch-status-check-journey" id="toc-journal-batch-status-check-journey" class="nav-link" data-scroll-target="#journal-batch-status-check-journey">Journal Batch Status Check Journey</a></li>
+  <li><a href="#accounting-period-status" id="toc-accounting-period-status" class="nav-link" data-scroll-target="#accounting-period-status">Accounting Period Status</a></li>
+  <li><a href="#ledger-information-retrieval" id="toc-ledger-information-retrieval" class="nav-link" data-scroll-target="#ledger-information-retrieval">Ledger Information Retrieval</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./prepare.html">Solution Overview</a></li><li class="breadcrumb-item"><a href="./prepare.html">Prepare</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-02-Develop Custom Extension OpenAPI Spec.html">02-Develop Custom Extension OpenAPI Spec</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Step One</h1>
+<h1 class="title">Develop Custom Extension OpenAPI Spec</h1>
 </div>
 
 
@@ -242,9 +275,125 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="step-one-solution---the-what" class="level3">
-<h3 class="anchored" data-anchor-id="step-one-solution---the-what">Step One Solution - The What</h3>
-<p>(Summarize the overarching technical solution. Explain the reasoning and strategic considerations behind the solution)</p>
+<p>We’ve identified the following use cases based on the collaboration with IBM Consulting and the platform that they are building. We propose implementing a conversational AI solution using watsonx orchestrate that integrates with Oracle ERP on the following high-value journeys:</p>
+<ul>
+<li>Account Balance Inquiry</li>
+<li>Journal Batch Status Check</li>
+<li>Accounting Period Status</li>
+<li>Ledger Information Retrieval</li>
+</ul>
+<p>For each journey, we identified the API Endpoint that we need and also developed user interaction flow. Below are examples of how we develop a custom extension OpenAPI spec so that users could interact with the endpoints through watsonx Assistant actions.</p>
+<section id="account-balance-inquiry-journey" class="level3">
+<h3 class="anchored" data-anchor-id="account-balance-inquiry-journey">Account Balance Inquiry Journey</h3>
+<ul>
+<li>API Endpoint: GET <code>/fscmRestApi/resources/11.13.18.05/ledgerBalances</code></li>
+<li>Develop an action model to recognize account, currency, and ledger queries</li>
+<li>Create OpenAPI wrapper to handle the observable parameters given in the IBMC endpoints: accountGroupName, accountName, accountingPeriod, currency, ledgerName</li>
+<li>Design a conversational flow to collect missing parameters if not provided in initial query</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example interaction:</p>
+<ul>
+<li><strong>User</strong>: “What’s the current balance for our Hardware account?”</li>
+<li><strong>Bot</strong>: “Certainly! Which currency and ledger would you like to check?”</li>
+<li><strong>User</strong>: “USD in the UK Primary Ledger.”</li>
+<li><strong>Bot</strong>: [Calls API with parameters] “The current balance for the Hardware account is $X,XXX,XXX.XX as of [CurrentAccountingPeriod].”</li>
+</ul>
+</div>
+</div>
+<p><strong>For OpenAPI spec example</strong>, please see sections starting line 15 from <a href="../../assets/openapi_example.json">this example file</a> where the <strong>/ledgerBalances</strong> route was developed</p>
+<p><img src="assets/screenshots/openapi_ledgerBalances.png" class="img-fluid"></p>
+</section>
+<section id="journal-batch-status-check-journey" class="level3">
+<h3 class="anchored" data-anchor-id="journal-batch-status-check-journey">Journal Batch Status Check Journey</h3>
+<ul>
+<li>API Endpoint: GET <code>/fscmRestApi/resources/11.13.18.05/journalBatches</code></li>
+<li>Develop an action model to recognize journal batch queries</li>
+<li>Create API wrapper to retrieve all journal batches</li>
+<li>Implement logic to filter and sort batches based on recency or other criteria</li>
+<li>Design conversation flow to offer details on specific batches</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example interaction:</p>
+<ul>
+<li><strong>User</strong>: “Show me the latest journal batches.”</li>
+<li><strong>Bot</strong>: [Calls API and processes response]
+<ul>
+<li>“Here are the latest journal batches:</li>
+<li>Batch ID: 12345, Description: ‘Monthly Accruals’, Status: Posted</li>
+<li>Batch ID: 12346, Description: ‘Expense Reimbursements’, Status: Unposted. […]</li>
+<li>Would you like more details on any specific batch?”</li>
+</ul></li>
+</ul>
+</div>
+</div>
+<p><strong>For OpenAPI spec example</strong>, please see sections starting line 703 from <a href="../../assets/openapi_example.json">this example file</a> where the <strong>/journalBatches</strong> route was developed <img src="assets/screenshots/openapi_journalBatches.png" class="img-fluid"></p>
+</section>
+<section id="accounting-period-status" class="level3">
+<h3 class="anchored" data-anchor-id="accounting-period-status">Accounting Period Status</h3>
+<ul>
+<li>API Endpoint: GET <code>/fscmRestApi/resources/latest/accountingPeriodStatusLOV</code></li>
+<li>Develop an action model to recognize period and ledger queries (wxo)</li>
+<li>Create OAPI wrapper to handle parameters: ApplicationId, LedgerId, PeriodNameId</li>
+<li>Implement logic to translate user-friendly period names (i.e “June 2024”) to system IDs</li>
+<li>Design conversation flow to collect ledger information if not provided</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example interaction: - <strong>User</strong>: “What’s the status of the June 2024 accounting period?” - <strong>Bot</strong>: “Which ledger would you like me to check?” - <strong>User</strong>: “The AU Council Primary Ledger.” - <strong>Bot</strong>: [Calls API with parameters] “The status of the June 2024 (06-24) period for the AU Council Primary Ledger is: Open.”</p>
+</div>
+</div>
+<p><strong>For OpenAPI spec example</strong>, please see sections starting line 1763 from <a href="../../assets/openapi_example.json">this example file</a> where the <strong>/journalBatches</strong> route was developed <img src="assets/screenshots/openapi_AccountingPeriodStatus.png" class="img-fluid"></p>
+</section>
+<section id="ledger-information-retrieval" class="level3">
+<h3 class="anchored" data-anchor-id="ledger-information-retrieval">Ledger Information Retrieval</h3>
+<ul>
+<li>API Endpoint: GET <code>/fscmRestApi/resources/latest/ledgersLOV</code></li>
+<li>Develop an actions and/or skills based model to recognize ledger information queries</li>
+<li>Create API wrapper to retrieve all ledgers or filter by name</li>
+<li>Implement logic to present ledger information in a concise, user-friendly format</li>
+<li>Design a conversation flow to offer additional details on specific ledgers</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Example interaction: - User: “What ledgers do we have in our system?” - Bot: [Calls API and processes response] - “Here are the primary ledgers in our system: - UK Primary Ledger - US Primary Ledger - Australian Primary Ledger - Would you like more details about any of these ledgers?”</p>
+</div>
+</div>
+<p><strong>For OpenAPI spec example</strong>, please see sections starting line 1256 from <a href="../../assets/openapi_example.json">this example file</a> where the <strong>/journalBatches</strong> route was developed</p>
 
 
 </section>
@@ -669,13 +818,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Problem Definition">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Problem Definition</span>
+      <a href="./IM-01-Understand Oracle Cloud API.html" class="pagination-link" aria-label="01-Understand Oracle Cloud API">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">01-Understand Oracle Cloud API</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./environment.html" class="pagination-link" aria-label="Environment">
-        <span class="nav-page-text">Environment</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./IM-03-Develop AI Assistant Actions.html" class="pagination-link" aria-label="03-Develop AI Assistant Actions">
+        <span class="nav-page-text">03-Develop AI Assistant Actions</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

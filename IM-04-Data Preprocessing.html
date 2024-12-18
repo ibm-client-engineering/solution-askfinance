@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Main takeaways and results of the project">
 
-<title>Key Takeaways – AskFinance</title>
+<title>Data Preprocessing – AskFinance</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,7 +29,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./IM-08-Hosted Static Site.html" rel="prev">
+<link href="./IM-05-Watson Discovery Setup.html" rel="next">
+<link href="./IM-03-Develop AI Assistant Actions.html" rel="prev">
 <link href="./images/bee.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -124,7 +124,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./key-takeaway.html">Key Takeaways</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-04-Data Preprocessing.html">04-Data Preprocessing</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -173,13 +173,13 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">Implementation Methodology</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./IM-01-Understand Oracle Cloud API.html" class="sidebar-item-text sidebar-link">
@@ -200,7 +200,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./IM-04-Data Preprocessing.html" class="sidebar-item-text sidebar-link">
+  <a href="./IM-04-Data Preprocessing.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">04-Data Preprocessing</span></a>
   </div>
 </li>
@@ -232,7 +232,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./key-takeaway.html" class="sidebar-item-text sidebar-link active">
+  <a href="./key-takeaway.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Key Takeaways</span></a>
   </div>
 </li>
@@ -246,25 +246,22 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#desired-outcomes" id="toc-desired-outcomes" class="nav-link active" data-scroll-target="#desired-outcomes">Desired Outcomes</a></li>
-  <li><a href="#expected-benefits-to-the-business" id="toc-expected-benefits-to-the-business" class="nav-link" data-scroll-target="#expected-benefits-to-the-business">Expected Benefits to the Business</a></li>
-  <li><a href="#demo-video" id="toc-demo-video" class="nav-link" data-scroll-target="#demo-video">Demo Video</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">1. Introduction</a></li>
+  <li><a href="#input-data" id="toc-input-data" class="nav-link" data-scroll-target="#input-data">2. Input Data</a></li>
+  <li><a href="#contextualizing-data-for-llm-and-rag" id="toc-contextualizing-data-for-llm-and-rag" class="nav-link" data-scroll-target="#contextualizing-data-for-llm-and-rag">3. Contextualizing Data for LLM and RAG</a></li>
+  <li><a href="#preparing-data-for-watson-discovery" id="toc-preparing-data-for-watson-discovery" class="nav-link" data-scroll-target="#preparing-data-for-watson-discovery">4. Preparing Data for Watson Discovery</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">5. Conclusion</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./IM-01-Understand Oracle Cloud API.html">Implementation Methodology</a></li><li class="breadcrumb-item"><a href="./IM-04-Data Preprocessing.html">04-Data Preprocessing</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Key Takeaways</h1>
+<h1 class="title">Data Preprocessing</h1>
 </div>
 
-<div>
-  <div class="description">
-    Main takeaways and results of the project
-  </div>
-</div>
 
 
 <div class="quarto-title-meta">
@@ -279,28 +276,34 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="desired-outcomes" class="level2">
-<h2 class="anchored" data-anchor-id="desired-outcomes">Desired Outcomes</h2>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
+<p>Data preprocessing is a crucial step in implementing Retrieval Augmented Generation (RAG) functionality, as it enables the transformation of raw data into a structured and contextualized format that can be effectively processed by Large Language Models (LLMs). This process involves a series of steps, including data merging, contextualizing, and preparation, to ensure that the input data is accurate, consistent, and suitable for RAG analysis. By preprocessing the data, we can unlock the full potential of LLMs and Watson Discovery, enabling more accurate and reliable results in RAG-related applications.</p>
+</section>
+<section id="input-data" class="level2">
+<h2 class="anchored" data-anchor-id="input-data">2. Input Data</h2>
 <ul>
-<li><strong>Streamlined Monthly Close Process</strong>: Automate manual review processes and provide easy access to financial information.</li>
-<li><strong>Actionable Insights</strong>: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.</li>
-<li><strong>Improved Financial Accuracy</strong>: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.</li>
+<li>Trial Balance spreadsheet that contains different accounts and the respective numbers.</li>
+<li>Columns: Accounts - Description, 2020, Q1-2020, Q2-2020, etc.</li>
 </ul>
 </section>
-<section id="expected-benefits-to-the-business" class="level2">
-<h2 class="anchored" data-anchor-id="expected-benefits-to-the-business">Expected Benefits to the Business</h2>
+<section id="contextualizing-data-for-llm-and-rag" class="level2">
+<h2 class="anchored" data-anchor-id="contextualizing-data-for-llm-and-rag">3. Contextualizing Data for LLM and RAG</h2>
 <ul>
-<li><strong>Increased Efficiency</strong>: Automate manual review processes, freeing up resources for strategic activities.</li>
-<li><strong>Enhanced Decision-Making</strong>: Provide actionable insights and trends for informed decisions and optimized budget planning.</li>
-<li><strong>Improved Financial Accuracy</strong>: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.</li>
-<li><strong>Reduced Risk and Compliance Costs</strong>: Lower compliance costs and protect the organization’s brand by ensuring accurate and complete financial data.</li>
+<li>When a CSV file is uploaded to Watson Discovery, each row is transformed into a JSON object, allowing for efficient processing and analysis. However, for RAG use cases, the data can be scattered and fragmented, making it challenging for Large Language Models (LLMs) to process effectively.</li>
+<li>To address this limitation, we developed a custom data pipeline that transforms all columns of data into a single paragraph of information. This pipeline enables the creation of a cohesive and structured input for LLMs, facilitating more accurate and reliable processing of RAG-related data.</li>
 </ul>
 </section>
-<section id="demo-video" class="level2">
-<h2 class="anchored" data-anchor-id="demo-video">Demo Video</h2>
+<section id="preparing-data-for-watson-discovery" class="level2">
+<h2 class="anchored" data-anchor-id="preparing-data-for-watson-discovery">4. Preparing Data for Watson Discovery</h2>
 <ul>
-<li>AskFinance Demo Video: <a href="https://ibm.box.com/s/psloleqooumug2bcarn5a01eewarete3">Box Link</a></li>
-<li>Technical Walkthrough: <a href="https://ibm.box.com/s/ks7qop14txptmi53l2lsn7rwki0xb60h">Box Link</a></li>
+<li>Saving data as CSV files as Watson Discovery separates each CSV row into independent documents that could then be used for RAG and LLM Search.</li>
+</ul>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">5. Conclusion</h2>
+<ul>
+<li>With spreadsheets as input data, it is important to clean and contextualize the data using a custom data pipeline. This will ensure the RAG technique to work properly and allow LLM to understand the input data better. Then, store data in Watson Discovery before proceeding with integrating with watsonx assistant and watsonx.ai.</li>
 </ul>
 
 
@@ -726,11 +729,14 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./IM-08-Hosted Static Site.html" class="pagination-link" aria-label="08-Hosted Static Site">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">08-Hosted Static Site</span>
+      <a href="./IM-03-Develop AI Assistant Actions.html" class="pagination-link" aria-label="03-Develop AI Assistant Actions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">03-Develop AI Assistant Actions</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./IM-05-Watson Discovery Setup.html" class="pagination-link" aria-label="05-Watson Discovery Setup">
+        <span class="nav-page-text">05-Watson Discovery Setup</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

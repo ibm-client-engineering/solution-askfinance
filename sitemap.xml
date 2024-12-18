@@ -1,35 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/troubleshooting.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-06-Watsonx Assistant Setup.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
   <url>
-    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/environment.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-02-Develop Custom Extension OpenAPI Spec.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
   <url>
-    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/index.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-05-Watson Discovery Setup.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-08-Hosted Static Site.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-04-Data Preprocessing.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
   <url>
     <loc>https://ibm-client-engineering.github.io/solution-AskFinance/key-takeaway.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
   <url>
-    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/stepthree-imp.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/SO-02-environment.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
   <url>
-    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/prepare.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-03-Develop AI Assistant Actions.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
   <url>
-    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/stepone-imp.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/SO-01-prepare.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
   <url>
-    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/steptwo-imp.html</loc>
-    <lastmod>2024-12-18T17:07:24.195Z</lastmod>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/SO-03-troubleshooting.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-07-Watsonxai Setup.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/IM-01-Understand Oracle Cloud API.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
+  </url>
+  <url>
+    <loc>https://ibm-client-engineering.github.io/solution-AskFinance/index.html</loc>
+    <lastmod>2024-12-18T17:11:50.035Z</lastmod>
   </url>
 </urlset>
