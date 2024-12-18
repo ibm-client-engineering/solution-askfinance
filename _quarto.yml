@@ -38,8 +38,6 @@ website:
             href: SO-01-prepare.qmd
           - text: Environment 
             href: SO-02-environment.qmd
-          - text: Troubleshooting
-            href: SO-03-troubleshooting.qmd
         - section: Implementation Methodology
           contents:
           - text: 01-Understand Oracle Cloud API
