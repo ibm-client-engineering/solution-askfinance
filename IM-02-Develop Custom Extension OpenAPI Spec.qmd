@@ -64,6 +64,7 @@ Example interaction:
 ::: {.callout-note}
 
 Example interaction:
+
 - **User**: "What's the status of the June 2024 accounting period?"
 - **Bot**: "Which ledger would you like me to check?"
 - **User**: "The AU Council Primary Ledger."
@@ -83,6 +84,7 @@ Example interaction:
 ::: {.callout-note}
 
 Example interaction:
+
 - User: "What ledgers do we have in our system?"
 - Bot: [Calls API and processes response] 
     - "Here are the primary ledgers in our system:
