@@ -360,7 +360,13 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Example interaction: - <strong>User</strong>: “What’s the status of the June 2024 accounting period?” - <strong>Bot</strong>: “Which ledger would you like me to check?” - <strong>User</strong>: “The AU Council Primary Ledger.” - <strong>Bot</strong>: [Calls API with parameters] “The status of the June 2024 (06-24) period for the AU Council Primary Ledger is: Open.”</p>
+<p>Example interaction:</p>
+<ul>
+<li><strong>User</strong>: “What’s the status of the June 2024 accounting period?”</li>
+<li><strong>Bot</strong>: “Which ledger would you like me to check?”</li>
+<li><strong>User</strong>: “The AU Council Primary Ledger.”</li>
+<li><strong>Bot</strong>: [Calls API with parameters] “The status of the June 2024 (06-24) period for the AU Council Primary Ledger is: Open.”</li>
+</ul>
 </div>
 </div>
 <p><strong>For OpenAPI spec example</strong>, please see sections starting line 1763 from <a href="../../assets/openapi_example.json">this example file</a> where the <strong>/journalBatches</strong> route was developed <img src="assets/screenshots/openapi_AccountingPeriodStatus.png" class="img-fluid"></p>
@@ -384,7 +390,20 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Example interaction: - User: “What ledgers do we have in our system?” - Bot: [Calls API and processes response] - “Here are the primary ledgers in our system: - UK Primary Ledger - US Primary Ledger - Australian Primary Ledger - Would you like more details about any of these ledgers?”</p>
+<p>Example interaction:</p>
+<ul>
+<li>User: “What ledgers do we have in our system?”</li>
+<li>Bot: [Calls API and processes response]
+<ul>
+<li>“Here are the primary ledgers in our system:
+<ul>
+<li>UK Primary Ledger</li>
+<li>US Primary Ledger</li>
+<li>Australian Primary Ledger</li>
+</ul></li>
+<li>Would you like more details about any of these ledgers?”</li>
+</ul></li>
+</ul>
 </div>
 </div>
 <p><strong>For OpenAPI spec example</strong>, please see sections starting line 1256 from <a href="../../assets/openapi_example.json">this example file</a> where the <strong>/journalBatches</strong> route was developed</p>
