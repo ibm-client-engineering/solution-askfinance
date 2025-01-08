@@ -1,5 +1,16 @@
 [
   {
+    "objectID": "IM-02-Develop Custom Extension OpenAPI Spec.html",
+    "href": "IM-02-Develop Custom Extension OpenAPI Spec.html",
+    "title": "Develop Custom Extension OpenAPI Spec",
+    "section": "",
+    "text": "We’ve identified the following use cases based on the collaboration with IBM Consulting and the platform that they are building. We propose implementing a conversational AI solution using watsonx orchestrate that integrates with Oracle ERP on the following high-value journeys:\n\nAccount Balance Inquiry\nJournal Batch Status Check\nAccounting Period Status\nLedger Information Retrieval\n\nFor each journey, we identified the API Endpoint that we need and also developed user interaction flow. Below are examples of how we develop a custom extension OpenAPI spec so that users could interact with the endpoints through watsonx Assistant actions.\n\nAccount Balance Inquiry Journey\n\nAPI Endpoint: GET /fscmRestApi/resources/11.13.18.05/ledgerBalances\nDevelop an action model to recognize account, currency, and ledger queries\nCreate OpenAPI wrapper to handle the observable parameters given in the IBMC endpoints: accountGroupName, accountName, accountingPeriod, currency, ledgerName\nDesign a conversational flow to collect missing parameters if not provided in initial query\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction:\n\nUser: “What’s the current balance for our Hardware account?”\nBot: “Certainly! Which currency and ledger would you like to check?”\nUser: “USD in the UK Primary Ledger.”\nBot: [Calls API with parameters] “The current balance for the Hardware account is $X,XXX,XXX.XX as of [CurrentAccountingPeriod].”\n\n\n\nFor OpenAPI spec example, please see sections starting line 15 from this example file where the /ledgerBalances route was developed\n\n\n\nJournal Batch Status Check Journey\n\nAPI Endpoint: GET /fscmRestApi/resources/11.13.18.05/journalBatches\nDevelop an action model to recognize journal batch queries\nCreate API wrapper to retrieve all journal batches\nImplement logic to filter and sort batches based on recency or other criteria\nDesign conversation flow to offer details on specific batches\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction:\n\nUser: “Show me the latest journal batches.”\nBot: [Calls API and processes response]\n\n“Here are the latest journal batches:\nBatch ID: 12345, Description: ‘Monthly Accruals’, Status: Posted\nBatch ID: 12346, Description: ‘Expense Reimbursements’, Status: Unposted. […]\nWould you like more details on any specific batch?”\n\n\n\n\nFor OpenAPI spec example, please see sections starting line 703 from this example file where the /journalBatches route was developed \n\n\nAccounting Period Status\n\nAPI Endpoint: GET /fscmRestApi/resources/latest/accountingPeriodStatusLOV\nDevelop an action model to recognize period and ledger queries (wxo)\nCreate OAPI wrapper to handle parameters: ApplicationId, LedgerId, PeriodNameId\nImplement logic to translate user-friendly period names (i.e “June 2024”) to system IDs\nDesign conversation flow to collect ledger information if not provided\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction: - User: “What’s the status of the June 2024 accounting period?” - Bot: “Which ledger would you like me to check?” - User: “The AU Council Primary Ledger.” - Bot: [Calls API with parameters] “The status of the June 2024 (06-24) period for the AU Council Primary Ledger is: Open.”\n\n\nFor OpenAPI spec example, please see sections starting line 1763 from this example file where the /journalBatches route was developed \n\n\nLedger Information Retrieval\n\nAPI Endpoint: GET /fscmRestApi/resources/latest/ledgersLOV\nDevelop an actions and/or skills based model to recognize ledger information queries\nCreate API wrapper to retrieve all ledgers or filter by name\nImplement logic to present ledger information in a concise, user-friendly format\nDesign a conversation flow to offer additional details on specific ledgers\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction: - User: “What ledgers do we have in our system?” - Bot: [Calls API and processes response] - “Here are the primary ledgers in our system: - UK Primary Ledger - US Primary Ledger - Australian Primary Ledger - Would you like more details about any of these ledgers?”\n\n\nFor OpenAPI spec example, please see sections starting line 1256 from this example file where the /journalBatches route was developed",
+    "crumbs": [
+      "Implementation Methodology",
+      "02-Develop Custom Extension OpenAPI Spec"
+    ]
+  },
+  {
     "objectID": "IM-06-Watsonx Assistant Setup.html",
     "href": "IM-06-Watsonx Assistant Setup.html",
     "title": "watsonx Assistant Setup",
@@ -66,69 +77,14 @@
     ]
   },
   {
-    "objectID": "IM-02-Develop Custom Extension OpenAPI Spec.html",
-    "href": "IM-02-Develop Custom Extension OpenAPI Spec.html",
-    "title": "Develop Custom Extension OpenAPI Spec",
+    "objectID": "IM-07-Watsonxai Setup.html",
+    "href": "IM-07-Watsonxai Setup.html",
+    "title": "watsonx.ai Setup",
     "section": "",
-    "text": "We’ve identified the following use cases based on the collaboration with IBM Consulting and the platform that they are building. We propose implementing a conversational AI solution using watsonx orchestrate that integrates with Oracle ERP on the following high-value journeys:\n\nAccount Balance Inquiry\nJournal Batch Status Check\nAccounting Period Status\nLedger Information Retrieval\n\nFor each journey, we identified the API Endpoint that we need and also developed user interaction flow. Below are examples of how we develop a custom extension OpenAPI spec so that users could interact with the endpoints through watsonx Assistant actions.\n\nAccount Balance Inquiry Journey\n\nAPI Endpoint: GET /fscmRestApi/resources/11.13.18.05/ledgerBalances\nDevelop an action model to recognize account, currency, and ledger queries\nCreate OpenAPI wrapper to handle the observable parameters given in the IBMC endpoints: accountGroupName, accountName, accountingPeriod, currency, ledgerName\nDesign a conversational flow to collect missing parameters if not provided in initial query\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction:\n\nUser: “What’s the current balance for our Hardware account?”\nBot: “Certainly! Which currency and ledger would you like to check?”\nUser: “USD in the UK Primary Ledger.”\nBot: [Calls API with parameters] “The current balance for the Hardware account is $X,XXX,XXX.XX as of [CurrentAccountingPeriod].”\n\n\n\nFor OpenAPI spec example, please see sections starting line 15 from this example file where the /ledgerBalances route was developed\n\n\n\nJournal Batch Status Check Journey\n\nAPI Endpoint: GET /fscmRestApi/resources/11.13.18.05/journalBatches\nDevelop an action model to recognize journal batch queries\nCreate API wrapper to retrieve all journal batches\nImplement logic to filter and sort batches based on recency or other criteria\nDesign conversation flow to offer details on specific batches\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction:\n\nUser: “Show me the latest journal batches.”\nBot: [Calls API and processes response]\n\n“Here are the latest journal batches:\nBatch ID: 12345, Description: ‘Monthly Accruals’, Status: Posted\nBatch ID: 12346, Description: ‘Expense Reimbursements’, Status: Unposted. […]\nWould you like more details on any specific batch?”\n\n\n\n\nFor OpenAPI spec example, please see sections starting line 703 from this example file where the /journalBatches route was developed \n\n\nAccounting Period Status\n\nAPI Endpoint: GET /fscmRestApi/resources/latest/accountingPeriodStatusLOV\nDevelop an action model to recognize period and ledger queries (wxo)\nCreate OAPI wrapper to handle parameters: ApplicationId, LedgerId, PeriodNameId\nImplement logic to translate user-friendly period names (i.e “June 2024”) to system IDs\nDesign conversation flow to collect ledger information if not provided\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction: - User: “What’s the status of the June 2024 accounting period?” - Bot: “Which ledger would you like me to check?” - User: “The AU Council Primary Ledger.” - Bot: [Calls API with parameters] “The status of the June 2024 (06-24) period for the AU Council Primary Ledger is: Open.”\n\n\nFor OpenAPI spec example, please see sections starting line 1763 from this example file where the /journalBatches route was developed \n\n\nLedger Information Retrieval\n\nAPI Endpoint: GET /fscmRestApi/resources/latest/ledgersLOV\nDevelop an actions and/or skills based model to recognize ledger information queries\nCreate API wrapper to retrieve all ledgers or filter by name\nImplement logic to present ledger information in a concise, user-friendly format\nDesign a conversation flow to offer additional details on specific ledgers\n\n\n\n\n\n\n\nNote\n\n\n\nExample interaction: - User: “What ledgers do we have in our system?” - Bot: [Calls API and processes response] - “Here are the primary ledgers in our system: - UK Primary Ledger - US Primary Ledger - Australian Primary Ledger - Would you like more details about any of these ledgers?”\n\n\nFor OpenAPI spec example, please see sections starting line 1256 from this example file where the /journalBatches route was developed",
+    "text": "Navigate to the Cloud Pak for Data homescreen and then create a project: \nOnce on the project home screen navigate to the manage tab. \nNext, associate a Watson Machine Learning Instance to your project. Navigate to the Services and Integrations tab and then click on Associate service: \nFinally, check the Waston Machine Learning box to associate the instance to your project:",
     "crumbs": [
       "Implementation Methodology",
-      "02-Develop Custom Extension OpenAPI Spec"
-    ]
-  },
-  {
-    "objectID": "IM-05-Watson Discovery Setup.html",
-    "href": "IM-05-Watson Discovery Setup.html",
-    "title": "Watson Discovery Setup",
-    "section": "",
-    "text": "Data Preprocessing\nAccess to Watson Discovery",
-    "crumbs": [
-      "Implementation Methodology",
-      "05-Watson Discovery Setup"
-    ]
-  },
-  {
-    "objectID": "IM-05-Watson Discovery Setup.html#prerequisites",
-    "href": "IM-05-Watson Discovery Setup.html#prerequisites",
-    "title": "Watson Discovery Setup",
-    "section": "",
-    "text": "Data Preprocessing\nAccess to Watson Discovery",
-    "crumbs": [
-      "Implementation Methodology",
-      "05-Watson Discovery Setup"
-    ]
-  },
-  {
-    "objectID": "IM-05-Watson Discovery Setup.html#create-project-and-collection",
-    "href": "IM-05-Watson Discovery Setup.html#create-project-and-collection",
-    "title": "Watson Discovery Setup",
-    "section": "Create Project and Collection",
-    "text": "Create Project and Collection\n\nFirst launch Watson Discovery and then, create a new project \nSelect Conversational Search as the Project Type and upload your documents into the drop down: \nIf you will be web crawling your data, scroll down until you see the connect to data source option, click it and then select Web Crawl:",
-    "crumbs": [
-      "Implementation Methodology",
-      "05-Watson Discovery Setup"
-    ]
-  },
-  {
-    "objectID": "IM-05-Watson Discovery Setup.html#upload-documents",
-    "href": "IM-05-Watson Discovery Setup.html#upload-documents",
-    "title": "Watson Discovery Setup",
-    "section": "Upload documents",
-    "text": "Upload documents\n\nWatson Discovery projects are organized by “collections” of documents. Documents can be queried at the project or individual collection level.\nCreate the first project from a file upload and upload the knowledge base PDFs",
-    "crumbs": [
-      "Implementation Methodology",
-      "05-Watson Discovery Setup"
-    ]
-  },
-  {
-    "objectID": "IM-08-Hosted Static Site.html",
-    "href": "IM-08-Hosted Static Site.html",
-    "title": "Hosted Static Site",
-    "section": "",
-    "text": "Embed AI Assistant in code source\n\nOpen your Assistant instance and find the embed script tag following these instructions:\n\nWithin the Assitant Builder’s sidebar, navigate to the “Integrations” section\nUnder the “Essential channels” section select “Open” within the “Webchat” channel\nSelect the appropriate environment and navigate to the “Embed” tab\nCopy the provided script\n\nCreate a new HTML file using an editor of your choice and create the general structure of the file as shown below.\n\n&lt;html&gt;\n&lt;head&gt;&lt;/head&gt;\n&lt;body&gt;\n    &lt;title&gt;My Test Page&lt;/title&gt;\n    &lt;p&gt;The body of my page.&lt;/p&gt;\n    &lt;-- Insert Script Element --&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\nAdd your script element as shown below and open the HTML file using a browser to confirm the watsonx assistant chat is rendering correctly. You can also simply copy the code below and add your integrationID, serviceInstanceID, and update your region.\n\n&lt;html&gt;\n&lt;head&gt;&lt;/head&gt;\n&lt;body&gt;\n    &lt;title&gt;My Test Page&lt;/title&gt;\n    &lt;p&gt;The body of my page.&lt;/p&gt;\n    &lt;script&gt;\n        window.watsonAssistantChatOptions = {\n            integrationID: \"[Insert integrationID]\", // The ID of this integration.\n            region: \"us-south\", // The region your integration is hosted in.\n            serviceInstanceID: \"[Insert serviceInstanceID]\", // The ID of your service instance.\n            onLoad: async (instance) =&gt; { await instance.render(); }\n        };\n        setTimeout(function(){\n            const t=document.createElement('script');\n            t.src=\"https://web-chat.global.assistant.watson.appdomain.cloud/versions/\" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + \"/WatsonAssistantChatEntry.js\";\n            document.head.appendChild(t);\n        });\n    &lt;/script&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\n\n\n\n\n\nNote\n\n\n\nIf you wish to customize the web chat with options such as adding a restart button or adjusting the size, follow these links:\n\nCustomizing size and position of web chat\nAdvanced configuration options\n\n\n\n\n\n\nHost Static Site\n\nCreate Cloud Object Storage (COS) Instance\n\nGo to the dedicated IBM Cloud Account “Resource” List here and click “Create Resource +”\nSearch and select “Object Storage”\nSelect “IBM Cloud” as the infrastructure and the appropriate pricing plan\nName the service and click “Create”\n\n\n\nCreate a Custom COS Bucket\n\nFrom the “Resource” List select the newly created COS instance\nClick “Create a Custom Bucket”\nEnter a valid bucket name and select the appropriate values for “Resiliency”, “Location”, “Storage class”, “Object Versioning” and “Immutablity”\nWithin the section “Advanced configurations (optional)” click the “Add +” for “Static website hosting”\nEnsure the “Public access” toggle is switched to “On”\nEnter the name of the target html file which will be used to build the desired web app\nClick “Save” and then click “Create bucket”\n\n\n\nUpload HTML file\n\nUpload the HTML file you created here",
-    "crumbs": [
-      "Implementation Methodology",
-      "08-Hosted Static Site"
+      "07-Watsonxai Setup"
     ]
   },
   {
@@ -147,73 +103,10 @@
     "href": "SO-01-prepare.html#overview",
     "title": "Prepare",
     "section": "Overview",
-    "text": "Overview\nAskFinance is designed to simplify financial analysis and provide actionable insights to controllers. By leveraging conversational AI, AskFinance enables users to quickly and easily access financial data, identify trends, and make informed decisions. Here are a few examples of how AskFinance can be used:\n\nQuarterly Financial Review\n\nUse AskFinance to analyze revenue growth, expense trends, and net income over time, and identify areas for improvement.\nExample Solution Screenshot \n\n\n\nBudget Planning\n\nAsk AskFinance to provide insights on historical expense trends and revenue growth to inform budget planning and forecasting for future quarters.\nExample Solution Screenshot \n\n\n\nExpense Analysis\n\nUse AskFinance to analyze specific expense categories, such as travel or IT costs, and identify areas where costs can be optimized.\nExample Solution Screenshot \n\n\n\nAd-Hoc Analysis\n\nAsk AskFinance to provide quick answers to ad-hoc financial questions, such as “What was our revenue for Q2 2022?” or “What were our top expense categories for 2023?” or “Could you please help analyze how consistent the revenue growth was from 2020 to 2023”\nExample Solution Screenshot",
+    "text": "Overview\nAskFinance is designed to simplify financial analysis and provide actionable insights to controllers. By leveraging conversational AI, AskFinance enables users to quickly and easily access financial data, identify trends, and make informed decisions. Here are a few examples of how AskFinance can be used:\nNote: screenshots shown were using mocked ERP data\n\nQuarterly Financial Review\n\nUse AskFinance to analyze revenue growth, expense trends, and net income over time, and identify areas for improvement.\nExample Solution Screenshot \n\n\n\nBudget Planning\n\nAsk AskFinance to provide insights on historical expense trends and revenue growth to inform budget planning and forecasting for future quarters.\nExample Solution Screenshot \n\n\n\nExpense Analysis\n\nUse AskFinance to analyze specific expense categories, such as travel or IT costs, and identify areas where costs can be optimized.\nExample Solution Screenshot \n\n\n\nAd-Hoc Analysis\n\nAsk AskFinance to provide quick answers to ad-hoc financial questions, such as “What was our revenue for Q2 2022?” or “What were our top expense categories for 2023?” or “Could you please help analyze how consistent the revenue growth was from 2020 to 2023”\nExample Solution Screenshot",
     "crumbs": [
       "Solution Overview",
       "Prepare"
-    ]
-  },
-  {
-    "objectID": "IM-03-Develop AI Assistant Actions.html",
-    "href": "IM-03-Develop AI Assistant Actions.html",
-    "title": "Develop AI Assistant Actions",
-    "section": "",
-    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
-    "crumbs": [
-      "Implementation Methodology",
-      "03-Develop AI Assistant Actions"
-    ]
-  },
-  {
-    "objectID": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
-    "href": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
-    "title": "Develop AI Assistant Actions",
-    "section": "",
-    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
-    "crumbs": [
-      "Implementation Methodology",
-      "03-Develop AI Assistant Actions"
-    ]
-  },
-  {
-    "objectID": "SO-02-environment.html",
-    "href": "SO-02-environment.html",
-    "title": "Environment",
-    "section": "",
-    "text": "AskFinance is a conversational AI platform that empowers controllersof Banks and Insurances to make informed decisions by providing directaccess to ERP system data and leveraging Large Language Models(LLMs) to analyze financial trends and assist with budget planning.\nTo prepare for building a AskFinance project, please ensure you have access to the following solution components in your environment:\n\nwatsonx Assistant\nWatson Discovery\nwatsonx.ai\nERP System (e.g. Oracle Financials)\nIBM Cloud Platform\nCustomized User Interface\n\nEventually, the solution components will integrate as follow:",
-    "crumbs": [
-      "Solution Overview",
-      "Environment"
-    ]
-  },
-  {
-    "objectID": "key-takeaway.html",
-    "href": "key-takeaway.html",
-    "title": "Key Takeaways",
-    "section": "",
-    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
-    "crumbs": [
-      "Key Takeaways"
-    ]
-  },
-  {
-    "objectID": "key-takeaway.html#desired-outcomes",
-    "href": "key-takeaway.html#desired-outcomes",
-    "title": "Key Takeaways",
-    "section": "",
-    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
-    "crumbs": [
-      "Key Takeaways"
-    ]
-  },
-  {
-    "objectID": "key-takeaway.html#expected-benefits-to-the-business",
-    "href": "key-takeaway.html#expected-benefits-to-the-business",
-    "title": "Key Takeaways",
-    "section": "Expected Benefits to the Business",
-    "text": "Expected Benefits to the Business\n\nIncreased Efficiency: Automate manual review processes, freeing up resources for strategic activities.\nEnhanced Decision-Making: Provide actionable insights and trends for informed decisions and optimized budget planning.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.\nReduced Risk and Compliance Costs: Lower compliance costs and protect the organization’s brand by ensuring accurate and complete financial data.",
-    "crumbs": [
-      "Key Takeaways"
     ]
   },
   {
@@ -283,36 +176,110 @@
     ]
   },
   {
-    "objectID": "IM-07-Watsonxai Setup.html",
-    "href": "IM-07-Watsonxai Setup.html",
-    "title": "watsonx.ai Setup",
+    "objectID": "IM-08-Hosted Static Site.html",
+    "href": "IM-08-Hosted Static Site.html",
+    "title": "Hosted Static Site",
     "section": "",
-    "text": "Navigate to the Cloud Pak for Data homescreen and then create a project: \nOnce on the project home screen navigate to the manage tab. \nNext, associate a Watson Machine Learning Instance to your project. Navigate to the Services and Integrations tab and then click on Associate service: \nFinally, check the Waston Machine Learning box to associate the instance to your project:",
+    "text": "Embed AI Assistant in code source\n\nOpen your Assistant instance and find the embed script tag following these instructions:\n\nWithin the Assitant Builder’s sidebar, navigate to the “Integrations” section\nUnder the “Essential channels” section select “Open” within the “Webchat” channel\nSelect the appropriate environment and navigate to the “Embed” tab\nCopy the provided script\n\nCreate a new HTML file using an editor of your choice and create the general structure of the file as shown below.\n\n&lt;html&gt;\n&lt;head&gt;&lt;/head&gt;\n&lt;body&gt;\n    &lt;title&gt;My Test Page&lt;/title&gt;\n    &lt;p&gt;The body of my page.&lt;/p&gt;\n    &lt;-- Insert Script Element --&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\nAdd your script element as shown below and open the HTML file using a browser to confirm the watsonx assistant chat is rendering correctly. You can also simply copy the code below and add your integrationID, serviceInstanceID, and update your region.\n\n&lt;html&gt;\n&lt;head&gt;&lt;/head&gt;\n&lt;body&gt;\n    &lt;title&gt;My Test Page&lt;/title&gt;\n    &lt;p&gt;The body of my page.&lt;/p&gt;\n    &lt;script&gt;\n        window.watsonAssistantChatOptions = {\n            integrationID: \"[Insert integrationID]\", // The ID of this integration.\n            region: \"us-south\", // The region your integration is hosted in.\n            serviceInstanceID: \"[Insert serviceInstanceID]\", // The ID of your service instance.\n            onLoad: async (instance) =&gt; { await instance.render(); }\n        };\n        setTimeout(function(){\n            const t=document.createElement('script');\n            t.src=\"https://web-chat.global.assistant.watson.appdomain.cloud/versions/\" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + \"/WatsonAssistantChatEntry.js\";\n            document.head.appendChild(t);\n        });\n    &lt;/script&gt;\n    &lt;/body&gt;\n&lt;/html&gt;\n\n\n\n\n\n\nNote\n\n\n\nIf you wish to customize the web chat with options such as adding a restart button or adjusting the size, follow these links:\n\nCustomizing size and position of web chat\nAdvanced configuration options\n\n\n\n\n\n\nHost Static Site\n\nCreate Cloud Object Storage (COS) Instance\n\nGo to the dedicated IBM Cloud Account “Resource” List here and click “Create Resource +”\nSearch and select “Object Storage”\nSelect “IBM Cloud” as the infrastructure and the appropriate pricing plan\nName the service and click “Create”\n\n\n\nCreate a Custom COS Bucket\n\nFrom the “Resource” List select the newly created COS instance\nClick “Create a Custom Bucket”\nEnter a valid bucket name and select the appropriate values for “Resiliency”, “Location”, “Storage class”, “Object Versioning” and “Immutablity”\nWithin the section “Advanced configurations (optional)” click the “Add +” for “Static website hosting”\nEnsure the “Public access” toggle is switched to “On”\nEnter the name of the target html file which will be used to build the desired web app\nClick “Save” and then click “Create bucket”\n\n\n\nUpload HTML file\n\nUpload the HTML file you created here",
     "crumbs": [
       "Implementation Methodology",
-      "07-Watsonxai Setup"
+      "08-Hosted Static Site"
     ]
   },
   {
-    "objectID": "IM-01-Understand Oracle Cloud API.html",
-    "href": "IM-01-Understand Oracle Cloud API.html",
-    "title": "Understand Oracle Cloud API",
+    "objectID": "IM-05-Watson Discovery Setup.html",
+    "href": "IM-05-Watson Discovery Setup.html",
+    "title": "Watson Discovery Setup",
     "section": "",
-    "text": "Oracle APIs offer powerful tools for developers to integrate, extend, and automate Oracle’s suite of applications and services. For this solution, we leverage the REST API for Oracle Fusion Cloud Financials, enabling seamless access to essential financial data. You can find the documentation here: link.\nWith this API, you can retrieve critical financial information, including account balances, journal batches, periods, ledgers, and period status all within the virtual assistant.",
+    "text": "Data Preprocessing\nAccess to Watson Discovery",
     "crumbs": [
       "Implementation Methodology",
-      "01-Understand Oracle Cloud API"
+      "05-Watson Discovery Setup"
     ]
   },
   {
-    "objectID": "IM-01-Understand Oracle Cloud API.html#examples",
-    "href": "IM-01-Understand Oracle Cloud API.html#examples",
-    "title": "Understand Oracle Cloud API",
-    "section": "Examples",
-    "text": "Examples\nTo help in understanding the Oracle Cloud API, here are a few examples of how to call some of the key endpoints.\n\nExample: Get Account Balances\nTo get all account balances, you will need to provide query parameters such as accountGroupName, AccountName, accountingPeriod, and ledgerName.\nYou should provide query parameters and format the link as follows:\nhttps://&lt;url&gt;/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&finder=AccountGroupBalanceFinder;accountGroupName=%22%3cACCOUNT_GROUP_NAME%3e%22,accountName=%22%3cACCOUNT_NAME%3e%22,accountingPeriod=Jan-16,currency=%22%3cCURRENCY%3e%22,ledgerName=%22%3cLEDGER_NAME%3e%22&fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType\nA curl command example of this:\ncurl -i -u \"&lt;username&gt;:&lt;password&gt;\" -H \"Content-Type: application/vnd.oracle.adf.resourcecollection+json\" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&finder=AccountGroupBalanceFinder;accountGroupName=Unallocated,accountName=Building Rent,accountingPeriod=Jan-16,currency=USD,ledgerName=Vision Foods - USA Ledger&fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType\nYou can find additional information here.\n\n\n\nExample: Get Journal Batches\nWhile some API calls require specific query parameters, there are other use cases where a simple GET request to the endpoint retrieves the necessary information. An example of that is get journal batches.\nSimple GET request to the following link: https://&lt;url&gt;/fscmRestApi/resources/11.13.18.05/journalBatches\nA curl command example of this:\ncurl -i -u \"&lt;username&gt;:&lt;password&gt;\" -H \"Content-Type: application/vnd.oracle.adf.resourcecollection+json\" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches\nYou can find additional information here.\n\nUnderstanding the JSON format is crucial for extracting the correct data to display on the virtual assistant frontend.\nWith this understanding, a custom OpenAPI specification has been developed to integrate this seamlessly into our virtual assistant to avoid manually calling the endpoint each time.\n\n\nNotes on ERP Integration\nWhile the AskFinance project is designed to integrate with Oracle Cloud API, it’s worth noting that SAP can also be used as an alternative integration option. SAP is a widely used enterprise resource planning (ERP) system that can provide a rich source of financial data for analysis.\nKey Considerations for SAP Integration\n\nSAP API: SAP provides a range of APIs that can be used to integrate with AskFinance, including the SAP Cloud Platform API and the SAP S/4HANA API.\n\nAPIs in Finance\nAPIs for General Ledger Accounting\nAPIs for Financial Planning and Analysis\n\nData Mapping: When integrating with SAP, it’s essential to map the SAP data fields to the corresponding fields in AskFinance to ensure seamless data exchange.",
+    "objectID": "IM-05-Watson Discovery Setup.html#prerequisites",
+    "href": "IM-05-Watson Discovery Setup.html#prerequisites",
+    "title": "Watson Discovery Setup",
+    "section": "",
+    "text": "Data Preprocessing\nAccess to Watson Discovery",
     "crumbs": [
       "Implementation Methodology",
-      "01-Understand Oracle Cloud API"
+      "05-Watson Discovery Setup"
+    ]
+  },
+  {
+    "objectID": "IM-05-Watson Discovery Setup.html#create-project-and-collection",
+    "href": "IM-05-Watson Discovery Setup.html#create-project-and-collection",
+    "title": "Watson Discovery Setup",
+    "section": "Create Project and Collection",
+    "text": "Create Project and Collection\n\nFirst launch Watson Discovery and then, create a new project \nSelect Conversational Search as the Project Type and upload your documents into the drop down: \nIf you will be web crawling your data, scroll down until you see the connect to data source option, click it and then select Web Crawl:",
+    "crumbs": [
+      "Implementation Methodology",
+      "05-Watson Discovery Setup"
+    ]
+  },
+  {
+    "objectID": "IM-05-Watson Discovery Setup.html#upload-documents",
+    "href": "IM-05-Watson Discovery Setup.html#upload-documents",
+    "title": "Watson Discovery Setup",
+    "section": "Upload documents",
+    "text": "Upload documents\n\nWatson Discovery projects are organized by “collections” of documents. Documents can be queried at the project or individual collection level.\nCreate the first project from a file upload and upload the knowledge base PDFs",
+    "crumbs": [
+      "Implementation Methodology",
+      "05-Watson Discovery Setup"
+    ]
+  },
+  {
+    "objectID": "key-takeaway.html",
+    "href": "key-takeaway.html",
+    "title": "Key Takeaways",
+    "section": "",
+    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
+    "crumbs": [
+      "Key Takeaways"
+    ]
+  },
+  {
+    "objectID": "key-takeaway.html#desired-outcomes",
+    "href": "key-takeaway.html#desired-outcomes",
+    "title": "Key Takeaways",
+    "section": "",
+    "text": "Streamlined Monthly Close Process: Automate manual review processes and provide easy access to financial information.\nActionable Insights: Analyze financial data to identify trends, patterns, and anomalies, and provide actionable insights for informed decision-making.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.",
+    "crumbs": [
+      "Key Takeaways"
+    ]
+  },
+  {
+    "objectID": "key-takeaway.html#expected-benefits-to-the-business",
+    "href": "key-takeaway.html#expected-benefits-to-the-business",
+    "title": "Key Takeaways",
+    "section": "Expected Benefits to the Business",
+    "text": "Expected Benefits to the Business\n\nIncreased Efficiency: Automate manual review processes, freeing up resources for strategic activities.\nEnhanced Decision-Making: Provide actionable insights and trends for informed decisions and optimized budget planning.\nImproved Financial Accuracy: Reduce the risk of financial misstatements and non-compliance through LLM-driven transaction review.\nReduced Risk and Compliance Costs: Lower compliance costs and protect the organization’s brand by ensuring accurate and complete financial data.",
+    "crumbs": [
+      "Key Takeaways"
+    ]
+  },
+  {
+    "objectID": "IM-03-Develop AI Assistant Actions.html",
+    "href": "IM-03-Develop AI Assistant Actions.html",
+    "title": "Develop AI Assistant Actions",
+    "section": "",
+    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
+    "crumbs": [
+      "Implementation Methodology",
+      "03-Develop AI Assistant Actions"
+    ]
+  },
+  {
+    "objectID": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
+    "href": "IM-03-Develop AI Assistant Actions.html#create-custom-extension-in-watsonx-assistant",
+    "title": "Develop AI Assistant Actions",
+    "section": "",
+    "text": "In watsonx Assistant interface, navigate to “Integrations” page.\nScroll down and click “Build custom extensions” \nClick “Next”, enter an Extension Name (e.g. Oracle OpenAPI), click “Next”.\nUpload the json file that you’ve created, click “Next”, click “Finish”. \nClick “Add +” on the extension card, click “Next”, you’ll see an Authentication form.\nSelect “Basic Auth” and enter username and password credentials to access your server. \nclick “Next, click”Finish”. ## Integrate custom extension extension in Actions\n\nOnce the OpenAPI custom extension is added to the assistant, we can start creating watsonx assistant actions to interact with the paths. You should now have several operations available. And when selecting Oracle OpenAPI custom extension, we could select from dropdown the respective operations for each user journey.\n\n\nFor example, the following screenshot shows the Account Balance Inquiry action. Once we selected the /ledgerBalances path, we could see the parameters we could modify to pass session variables into. Modify it so it’s a proper path and all required parameters are included.  Once you’ve configured the steps that interact with custom extension, you could also return the results to the users using the response variable. Please see below screenshot as an example. \n\n\n\nFor example, the following screenshot shows the Journal Batch Status Check action. As we want to sort the returned data to show the latest, we incleded parameter “orderBy” and set that to “CreationDate:desc” to ensure correct data output. \n\n\n\nFor example, the following screenshot shows the Account Period Status action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the ApplicationId and LedgerId variables are passed to the API endpoint through the q parameter set to ApplicationId=${ApplicationId};LedgerId=${LedgerId};PeriodNameId='06-24' \n\n\n\nFor example, the following screenshot shows the Ledger Information Retrieval action. In this user journey, the user could select from a dropdown list which ledger they’d lilke to check status for. Therefore, the LedgerName session variable is passed to the API endpoint through the q parameter set to Name='${LedgerName}'",
+    "crumbs": [
+      "Implementation Methodology",
+      "03-Develop AI Assistant Actions"
     ]
   },
   {
@@ -343,6 +310,39 @@
     "text": "Challenges\n\nInefficient Monthly Close Process: Traditional CFO/Controller Monthly Close processes are often report-intensive, time-consuming, and reliant on legacy data warehouses.\nComplex Financial Data: The complexity of financial data makes it difficult to identify trends, patterns, and anomalies.\nInaccurate Financial Data: Inaccurate or incomplete financial data can lead to poor decision-making, non-compliance, and reputational damage.",
     "crumbs": [
       "Problem Definition"
+    ]
+  },
+  {
+    "objectID": "SO-02-environment.html",
+    "href": "SO-02-environment.html",
+    "title": "Environment",
+    "section": "",
+    "text": "AskFinance is a conversational AI platform that empowers controllersof Banks and Insurances to make informed decisions by providing directaccess to ERP system data and leveraging Large Language Models(LLMs) to analyze financial trends and assist with budget planning.\nTo prepare for building a AskFinance project, please ensure you have access to the following solution components in your environment:\n\nwatsonx Assistant\nWatson Discovery\nwatsonx.ai\nERP System (e.g. Oracle Financials)\nIBM Cloud Platform\nCustomized User Interface\n\nEventually, the solution components will integrate as follow:",
+    "crumbs": [
+      "Solution Overview",
+      "Environment"
+    ]
+  },
+  {
+    "objectID": "IM-01-Understand Oracle Cloud API.html",
+    "href": "IM-01-Understand Oracle Cloud API.html",
+    "title": "Understand Oracle Cloud API",
+    "section": "",
+    "text": "Oracle APIs offer powerful tools for developers to integrate, extend, and automate Oracle’s suite of applications and services. For this solution, we leverage the REST API for Oracle Fusion Cloud Financials, enabling seamless access to essential financial data. You can find the documentation here: link.\nWith this API, you can retrieve critical financial information, including account balances, journal batches, periods, ledgers, and period status all within the virtual assistant.",
+    "crumbs": [
+      "Implementation Methodology",
+      "01-Understand Oracle Cloud API"
+    ]
+  },
+  {
+    "objectID": "IM-01-Understand Oracle Cloud API.html#examples",
+    "href": "IM-01-Understand Oracle Cloud API.html#examples",
+    "title": "Understand Oracle Cloud API",
+    "section": "Examples",
+    "text": "Examples\nTo help in understanding the Oracle Cloud API, here are a few examples of how to call some of the key endpoints.\n\nExample: Get Account Balances\nTo get all account balances, you will need to provide query parameters such as accountGroupName, AccountName, accountingPeriod, and ledgerName.\nYou should provide query parameters and format the link as follows:\nhttps://&lt;url&gt;/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&finder=AccountGroupBalanceFinder;accountGroupName=%22%3cACCOUNT_GROUP_NAME%3e%22,accountName=%22%3cACCOUNT_NAME%3e%22,accountingPeriod=Jan-16,currency=%22%3cCURRENCY%3e%22,ledgerName=%22%3cLEDGER_NAME%3e%22&fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType\nA curl command example of this:\ncurl -i -u \"&lt;username&gt;:&lt;password&gt;\" -H \"Content-Type: application/vnd.oracle.adf.resourcecollection+json\" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/ledgerBalances?onlyData=true&finder=AccountGroupBalanceFinder;accountGroupName=Unallocated,accountName=Building Rent,accountingPeriod=Jan-16,currency=USD,ledgerName=Vision Foods - USA Ledger&fields=AccountGroupName,AccountName,LedgerName,Currency,CurrentAccountingPeriod,AccountCombination,CurrentPeriodBalance,AmountType\nYou can find additional information here.\n\n\n\nExample: Get Journal Batches\nWhile some API calls require specific query parameters, there are other use cases where a simple GET request to the endpoint retrieves the necessary information. An example of that is get journal batches.\nSimple GET request to the following link: https://&lt;url&gt;/fscmRestApi/resources/11.13.18.05/journalBatches\nA curl command example of this:\ncurl -i -u \"&lt;username&gt;:&lt;password&gt;\" -H \"Content-Type: application/vnd.oracle.adf.resourcecollection+json\" -X GET https://servername.fa.us2.oraclecloud.com/fscmRestApi/resources/11.13.18.05/journalBatches\nYou can find additional information here.\n\nUnderstanding the JSON format is crucial for extracting the correct data to display on the virtual assistant frontend.\nWith this understanding, a custom OpenAPI specification has been developed to integrate this seamlessly into our virtual assistant to avoid manually calling the endpoint each time.\n\n\nNotes on ERP Integration\nWhile the AskFinance project is designed to integrate with Oracle Cloud API, it’s worth noting that SAP can also be used as an alternative integration option. SAP is a widely used enterprise resource planning (ERP) system that can provide a rich source of financial data for analysis.\nKey Considerations for SAP Integration\n\nSAP API: SAP provides a range of APIs that can be used to integrate with AskFinance, including the SAP Cloud Platform API and the SAP S/4HANA API.\n\nAPIs in Finance\nAPIs for General Ledger Accounting\nAPIs for Financial Planning and Analysis\n\nData Mapping: When integrating with SAP, it’s essential to map the SAP data fields to the corresponding fields in AskFinance to ensure seamless data exchange.",
+    "crumbs": [
+      "Implementation Methodology",
+      "01-Understand Oracle Cloud API"
     ]
   }
 ]
