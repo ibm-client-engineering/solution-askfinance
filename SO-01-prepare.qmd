@@ -16,6 +16,8 @@ To prepare for building a AskFinance project, please ensure you have access to t
 ## Overview
 AskFinance is designed to simplify financial analysis and provide actionable insights to controllers. By leveraging conversational AI, AskFinance enables users to quickly and easily access financial data, identify trends, and make informed decisions. Here are a few examples of how AskFinance can be used:
 
+Note: screenshots shown were using mocked ERP data
+
 ### Quarterly Financial Review
 - Use AskFinance to analyze revenue growth, expense trends, and net income over time, and identify areas for improvement.
 - Example Solution Screenshot
